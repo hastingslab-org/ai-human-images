@@ -25,6 +25,7 @@ from pathlib import Path
 from textwrap import wrap
 from matplotlib.gridspec import GridSpec
 from matplotlib.legend_handler import HandlerTuple
+from matplotlib.lines import Line2D
 import re
 
 weights = {'a': 0.2, 'b': 0.5, 'c': 1}
@@ -74,6 +75,14 @@ error_type_colors = {
 
 # Define custom colors for each body part
 body_part_palette = sns.color_palette("Set2", 5)
+# body_part_colors = {
+#     'Torso': 'Wistia',
+#     'Limbs': 'magma',
+#     'Feet': 'BrBG_r',
+#     'Hands': 'cool',
+#     'Face': 'Accent' 
+# }
+
 body_part_colors = {
     'Torso': body_part_palette[0],
     'Limbs': body_part_palette[1],
@@ -440,12 +449,11 @@ def plot_dist_overall_severity(scores_q, ax):
 
     plot_overall_sev = pd.DataFrame(scores_q)
     plot_overall_sev.columns = ['index','overall_sev','annotator','model']
-    # plot_overall_sev_melted = plot_overall_sev.melt(id_vars=['model'], value_vars=['low', 'medium', 'high'], var_name='overall_sev', value_name='overall_sev')
 
-    # sns.histplot(data=plot_overall_sev, x='model', hue='overall_sev',multiple='stack', ax=ax)
     hue_order = ['low', 'medium','high']
     sns.countplot(data=plot_overall_sev, x='model',hue='overall_sev', hue_order=hue_order,ax=ax)
 
+    # add shading
     for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
         for bar, group_cmap in zip(bar_container, ['Blues', 'Greens', 'Reds']):
             bar.set_color(plt.get_cmap(group_cmap)(shade))
@@ -456,6 +464,14 @@ def plot_dist_overall_severity(scores_q, ax):
         if height > 0:
             ax.annotate(f'{height:.2f}', (p.get_x() + p.get_width() / 2., height),
                         ha='center', va='center', xytext=(0, 9), textcoords='offset points')
+
+    # custom legend
+    custom_lines = [Line2D([0], [0], color=plt.get_cmap('Blues')(0.3), lw=4),
+                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.6), lw=4),
+                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.9), lw=4)]
+
+    ax.legend(custom_lines, ['low', 'medium', 'high'])
+            
     ax.set_xlabel('Model')
     ax.set_ylabel('Count')
     ax.set_title('Overall distribution of overall image severity')
@@ -471,9 +487,17 @@ def plot_error_level_dist_models(error_count_df, ax):
     ax.set_ylabel('Count')    
     ax.set_title('Error Distribution for Each Model')
 
+    # add shading
     for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
         for bar, group_cmap in zip(bar_container, colour_models):
             bar.set_color(plt.get_cmap(group_cmap)(shade))
+
+    # custom legend
+    custom_lines = [Line2D([0], [0], color=plt.get_cmap('Blues')(0.3), lw=4),
+                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.6), lw=4),
+                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.9), lw=4)]
+
+    ax.legend(custom_lines, ['a', 'b', 'c'])
 
     # Add total values on top of each bar
     for p in ax.patches:
@@ -507,12 +531,17 @@ def plot_error_level_models_prompt(combined_df, ax):
         for i, level in enumerate(error_levels):
             ax.text(idx + i * bar_width + bar_width/6, 0, level, ha='right', va='top', fontsize=9, color='black', rotation=0)
 
+    # add shading
+    all_colours_shades = []
+    for shade in [0.3,0.6,0.9]:
+        for colour in colour_models:
+            all_colours_shades.append(plt.get_cmap(colour)(shade))
+    i = 0
     for bar_container in ax.containers:
-        for bar, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
-            # print(bar_container)
-            for bar_more, group_cmap in zip(bar, colour_models):
-                # print(bar)
-                bar_more.set_color(plt.get_cmap(group_cmap)(shade))
+        for bar in bar_container:
+            bar.set_color(all_colours_shades[i])
+        i += 1
+ 
 
     ax.set_xticks(x + bar_width * len(error_levels) / 3)
     ax.set_xticklabels(prompts, rotation=45, ha='right')
@@ -550,6 +579,17 @@ def plot_error_level_models_type(combined_df, ax):
     for idx, error_type in enumerate(error_types):
         for i, level in enumerate(error_levels):
             ax.text(idx + i * bar_width + bar_width/6, 0, level, ha='right', va='top', fontsize=9, color='black', rotation=0)
+
+    # add shading
+    all_colours_shades = []
+    for shade in [0.3,0.6,0.9]:
+        for colour in colour_models:
+            all_colours_shades.append(plt.get_cmap(colour)(shade))
+    i = 0
+    for bar_container in ax.containers:
+        for bar in bar_container:
+            bar.set_color(all_colours_shades[i])
+        i += 1
             
     ax.set_xticks(x + bar_width * len(error_levels) / 3)
     ax.set_xticklabels(error_types, rotation=45, ha='right')
@@ -589,6 +629,18 @@ def plot_error_level_models_body_part(combined_df, ax):
     ax.set_xticks(x + bar_width * len(error_levels) / 3)
     ax.set_xticklabels(body_parts, rotation=0, ha='center')
     ax.tick_params(axis='x', which='major', pad=10)
+
+    # add shading
+    all_colours_shades = []
+    for shade in [0.3,0.6,0.9]:
+        for colour in colour_models:
+            all_colours_shades.append(plt.get_cmap(colour)(shade))
+    
+    i = 0
+    for bar_container in ax.containers:
+        for bar in bar_container:
+            bar.set_color(all_colours_shades[i])
+        i += 1
 
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Models', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
@@ -631,13 +683,25 @@ def plot_prompt_error_type(combined_df, ax):
     ax.set_xticklabels(prompts, rotation=45, ha='right')
     ax.tick_params(axis='x', which='major', pad=10)
 
+    # # add shading
+    # all_colours_shades = []
+    # for shade in [0.3,0.6,0.9]:
+    #     for _,colour in error_type_colors.items():
+    #         all_colours_shades.append(plt.get_cmap(colour)(shade))
+    
+    # i = 0
+    # for bar_container in ax.containers:
+    #     for bar in bar_container:
+    #         bar.set_color(all_colours_shades[i])
+    #     i += 1
+
     # Add a smaller legend to the rightmost side of the plot
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Error Types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
     ax.set_xlabel('Prompt and Error Severity')
     ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Type per Model per Prompt')
+    ax.set_title('Count of Errors per Error Type per Body Type per Prompt')
 
 def plot_prompt_body_type(combined_df, ax):
     # Aggregate the counts per prompt, error level, and body part
@@ -672,13 +736,25 @@ def plot_prompt_body_type(combined_df, ax):
     ax.set_xticklabels(prompts, rotation=45, ha='right')
     ax.tick_params(axis='x', which='major', pad=10)
 
+    # # add shading
+    # all_colours_shades = []
+    # for shade in [0.3,0.6,0.9]:
+    #     for _,colour in body_part_colors.items():
+    #         all_colours_shades.append(plt.get_cmap(colour)(shade))
+    
+    # i = 0
+    # for bar_container in ax.containers:
+    #     for bar in bar_container:
+    #         bar.set_color(all_colours_shades[i])
+    #     i += 1
+
     # Add a smaller legend to the rightmost side of the plot
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Body Parts', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
     ax.set_xlabel('Prompt and Error Severity')
     ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Severity per Model per Body Part')
+    ax.set_title('Count of Errors per Error Severity per Prompt per Body Part')
 
 def format_axes(fig):
     for i, ax in enumerate(fig.axes):
