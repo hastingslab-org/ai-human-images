@@ -1,0 +1,301 @@
+Image Id,Model,Prompt,Pic Num.,1. Missing Error-1.1 Torso,1. Missing Error-1.2 Limbs,1. Missing Error-1.3 Feet,1. Missing Error-1.4 Hands,1. Missing Error-1.5 Face,2. Extra Error-2.1 Torso,2. Extra Error-2.2 Limbs,2. Extra Error-2.3 Feet,2. Extra Error-2.4 Hands,2. Extra Error-2.5 Face,3. Configuration Error-3.1 Torso,3. Configuration Error-3.2 Limbs,3. Configuration Error-3.3 Feet,3. Configuration Error-3.4 Hands,3. Configuration Error-3.5 Face,4. Orientation Error-4.1 Torso,4. Orientation Error-4.2 Limbs,4. Orientation Error-4.3 Feet,4. Orientation Error-4.4 Hands,4. Orientation Error-4.5 Face,5. Proportion Error-5.1 Torso,5. Proportion Error-5.2 Limbs,5. Proportion Error-5.3 Feet,5. Proportion Error-5.4 Hands,5. Proportion Error-5.5 Face,Annotator
+dall-e3_couple hugging_01,dall-e3,couple hugging,1,,2/4c,,,,,1/4c,,,,,,,2/3a,,1/2a,2/5c,,,,,,,2/3a,,anno1
+dall-e3_mother or father holding baby_02,dall-e3,mother or father holding baby,2,,,,,,,,,,,,,,,,,1/3b,,,,,,,,,anno1
+dall-e3_couple hugging_03,dall-e3,couple hugging,3,,,,,,,,,,,,,,,,,,,,,,,,1/4a,,anno1
+dall-e3_people eating pizza_02,dall-e3,people eating pizza,2,,,,,,,,,1/10a,,,,,"1/10a,1/10c",,,,,,,,,,2/10a,,anno1
+dall-e3_five people sunbathing on beach_05,dall-e3,five people sunbathing on beach,5,,,,,4/4c,,,1/10c,,,2/5a,,"5/11a,6/11b","2/4a,2/4c",4/4c,,8/22b,,,,,5/22a,,,,anno1
+dall-e3_athlete performing salto_08,dall-e3,athlete performing salto,8,,,,,,,,,,,,,,,,,,,,,,,,,,anno1
+dall-e3_person jogging_04,dall-e3,person jogging,4,,,,,,,,,,,,,,,1/1a,,,,,,,1/4a,,,1/4a,anno1
+dall-e3_athlete performing salto_04,dall-e3,athlete performing salto,4,,,,,1/1b,,1/4c,1/2c,,,,,,,,,,,,,,1/5a,,,,anno1
+dall-e3_physician examining patient_07,dall-e3,physician examining patient,7,,,,,,,,,,,,,,,,,,,,,,1/4a,,,,anno1
+dall-e3_old couple in sauna_01,dall-e3,old couple in sauna,1,,,1/4a,,1/1a,,,1/4a,,,,,3/4a,3/3a,,,,,,,,,,,,anno1
+dall-e3_old couple in sauna_06,dall-e3,old couple in sauna,6,,,,,,,1/4b,,,,,,1/2a,2/4a,,,,,,,,1/4a,,,,anno4
+dall-e3_couple hugging_03,dall-e3,couple hugging,3,,,,,,,,,1/4b,,,,,,,,,,,,,,,,1/2a,anno4
+dall-e3_physician examining patient_01,dall-e3,physician examining patient,1,,,,,,,,,,,,,,"1/3a,1/3b,1/3c",,,,,,,,,,2/3b,,anno4
+dall-e3_mother or father holding baby_02,dall-e3,mother or father holding baby,2,,,,,,,,,,,,,,,,,,,,,,,,1/3a,2/3a,anno4
+dall-e3_five people sunbathing on beach_02,dall-e3,five people sunbathing on beach,2,,,,,,,,2/12c,,,1/6b,1/8c,2/12b,,1/6a,,,1/12a,,,,1/6a,,,,anno4
+dall-e3_wrestling in arena_04,dall-e3,wrestling in arena,4,,,,,,,1/8b,,,,,2/8c,,2/4b,,,,,,,,1/8a,,,,anno4
+dall-e3_five people playing volleyball_01,dall-e3,five people playing volleyball,1,,1/10b,,1/10a,,,,,,,,,,4/8b,,,,,,,,,,1/8a,,anno4
+dall-e3_people eating pizza_02,dall-e3,people eating pizza,2,,,,1/10a,,,,,,,,,,"1/10c,6/10b",,,,,,,,,,,,anno4
+dall-e3_physician examining patient_07,dall-e3,physician examining patient,7,,,,,,,,,,,,,,,,,,,,,,1/4b,,,,anno4
+dall-e3_mother or father holding baby_07,dall-e3,mother or father holding baby,7,,,,1/3a,,,,,,,,,,,,,,,,,,,,1/3a,,anno4
+dall-e3_five people playing volleyball_08,dall-e3,five people playing volleyball,8,,2/20c,3/10c,,1/5b,,,,,,,,,,"2/5a,3/5b",,,,,,,"3/18a,1/18b",,,,anno3
+dall-e3_mother or father holding baby_07,dall-e3,mother or father holding baby,7,,,,1/3a,,,,,,,,1/2a,,,1/2a,,,,,,,1/2a,,,,anno3
+dall-e3_wrestling in arena_04,dall-e3,wrestling in arena,4,,1/8c,1/4c,,,,1/7c,1/4c,1/4c,,1/2a,"1/7a,1/7b",1/4a,2/4c,,,,,,,,,,,,anno3
+dall-e3_person jogging_01,dall-e3,person jogging,1,,,,,,,,,1/2b,,1/1b,,,2/2a,1/1a,,,,,,"1/1a,1/1b",2/2b,,,,anno3
+dall-e3_five people playing volleyball_01,dall-e3,five people playing volleyball,1,,1/18c,,"1/17a,1/18c","1/5a,1/5b",,,,,,,,,"3/9a,2/9b,3/9c",1/5c,,,,,,,"2/17a,2/17b,2/17c",,3/9a,,anno3
+dall-e3_wrestling in arena_05,dall-e3,wrestling in arena,5,,1/8b,1/3c,2/3c,,,1/5c,1/3c,,,1/2b,,,2/3c,,,,1/3a,,,1/2a,2/8b,,1/3b,,anno3
+dall-e3_physician examining patient_01,dall-e3,physician examining patient,1,,,,,,,,,,,,1/6b,,"2/2a,1/2b",,,,,,,,,,,,anno3
+dall-e3_people eating pizza_01,dall-e3,people eating pizza,1,,,,2/8b,,,,,,,1/4b,"1/7a,1/7b",,,,,,,,,,1/7b,,,,anno3
+dall-e3_old couple in sauna_01,dall-e3,old couple in sauna,1,,,,,1/2b,,,1/4a,,,2/2c,,3/4a,3/3a,,,,,,,,1/8a,,,,anno3
+dall-e3_person jogging_04,dall-e3,person jogging,4,,,,,,,,,1/2a,,,,,,,,,,,,,,,,,anno3
+dall-e3_old couple in sauna_06,dall-e3,old couple in sauna,6,,,,1/4a,,,,,1/4a,,,,,,1/2a,,,,,,,,,,,anno2
+dall-e3_people eating pizza_01,dall-e3,people eating pizza,1,,,,2/10a,,,,,,,,,,,1/4a,,,,,,,,,,,anno2
+dall-e3_couple hugging_01,dall-e3,couple hugging,1,,,,,,,,,1/4a,,,2/6a,,,,,,,,,,1/6a,,,,anno2
+dall-e3_wrestling in arena_05,dall-e3,wrestling in arena,5,,1/8c,,2/4b,,,1/8c,,,,,,,2/3b,1/2a,,,,,,,3/7a,,,,anno2
+dall-e3_five people playing volleyball_08,dall-e3,five people playing volleyball,8,,1/20c,3/10c,,2/5b,,,,,,,,,,3/5a,,,,,,,"1/19b,2/19a",,,,anno2
+dall-e3_five people sunbathing on beach_02,dall-e3,five people sunbathing on beach,2,,2/20c,,1/7a,,,3/20c,2/11c,,,,1/18b,11/11a,6/6a,"4/5c,1/5b",,2/18a,6/11a,,,,1/18a,,1/6b,,anno2
+dall-e3_athlete performing salto_04,dall-e3,athlete performing salto,4,,,,,,,1/4c,,,,,,,,,,,,,,,"1/4b,2/4a",,,,anno2
+dall-e3_athlete performing salto_08,dall-e3,athlete performing salto,8,,,,1/2a,,,,,,,,,,,,,,,1/2a,,,,,,,anno2
+dall-e3_five people sunbathing on beach_05,dall-e3,five people sunbathing on beach,5,,1/22b,1/12c,,,,,"1/12b,1/12c",,,1/5a,1/21b,"2/11b,1/11c","4/7c,2/7b",4/4c,,2/21b,2/11a,,,,"1/21c,1/21b",,2/6c,,anno2
+dall-e3_person jogging_01,dall-e3,person jogging,1,,,,,,,,,1/2a,,1/1a,,,,,,,,,,,3/4a,,,,anno2
+dall-e3_couple hugging_02,dall-e3,couple hugging,2,,,,,,,,,1/3a,,,,,,,,,,,,1/2a,1/2a,,,,anno4
+dall-e3_mother or father holding baby_06,dall-e3,mother or father holding baby,6,,,,,,,1/2b,,,,,,,,1/3a,,,,,,,,,,2/3a,anno4
+dall-e3_couple hugging_07,dall-e3,couple hugging,7,,,,,,,,,,,,,,1/3a,,,,,,,,,,,,anno4
+dall-e3_athlete performing salto_01,dall-e3,athlete performing salto,1,,,1/2a,1/2a,,,,,,,,,1/2b,1/2a,,,,,,,,3/4b,,,,anno4
+dall-e3_couple hugging_05,dall-e3,couple hugging,5,,,,,,,1/4c,,,,,,,,,,,,,,,,,,,anno4
+dall-e3_people eating pizza_08,dall-e3,people eating pizza,8,,,,1/6a,,,,,,,,,,"2/6c,2/6a",,,,,,,,,,,,anno4
+dall-e3_people eating pizza_06,dall-e3,people eating pizza,6,,,,,,,,,,,,1/8c,,"3/8b,3/8a",,,,,,,,1/8a,,,,anno4
+dall-e3_mother or father holding baby_03,dall-e3,mother or father holding baby,3,,,,,,,,,,,,,,1/2a,,,,,,,,1/2a,,,,anno4
+dall-e3_person jogging_05,dall-e3,person jogging,5,,,,,,,,,,,,,,,,,,,,,,1/2a,1/2b,,,anno4
+dall-e3_athlete performing salto_05,dall-e3,athlete performing salto,5,,,,2/2a,,,,,,,,,,,,,1/2a,,,,,1/2a,,,,anno4
+dall-e3_couple hugging_06,dall-e3,couple hugging,6,,,,1/4a,,,,,,,,,,1/4b,1/2a,,1/4b,,,,,,,,,anno4
+dall-e3_couple hugging_04,dall-e3,couple hugging,4,,,,,,,,,,,,,,,,,,,,,,,,,,anno4
+dall-e3_five people playing volleyball_02,dall-e3,five people playing volleyball,2,,,,,,,,,,,,,,5/8b,2/5a,,,,,,,4/8b,,,,anno4
+dall-e3_wrestling in arena_03,dall-e3,wrestling in arena,3,,,,,,,,,,,,1/8b,,1/4b,,,,,,,,1/8a,,,,anno4
+dall-e3_five people sunbathing on beach_01,dall-e3,five people sunbathing on beach,1,,,,,,,8/28c,,,,3/7b,2/28c,,,7/7b,,,,,,,,,,,anno4
+dall-e3_mother or father holding baby_01,dall-e3,mother or father holding baby,1,,,,,,,1/4c,,1/4c,,,,,,1/2a,,,,,,,,,,,anno3
+dall-e3_old couple in sauna_03,dall-e3,old couple in sauna,3,,,"1/4a,1/4b",,2/2a,,,,,,1/2a,"1/8a,1/8c",4/4b,"3/4b,1/4c",1/2a,,,,,,,,,1/4b,,anno3
+dall-e3_old couple in sauna_04,dall-e3,old couple in sauna,4,,,,2/5a,1/2a,,1/8b,,1/5,,,1/8a,"3/4a,1/4b","2/5a,2/5c",,,,1/4a,,,,,,"2/4a,2/4b",,anno3
+dall-e3_physician examining patient_02,dall-e3,physician examining patient,2,,,,,,,,,,,,,,"1/4a,3/4c",,,,,,,,,,,,anno3
+dall-e3_wrestling in arena_07,dall-e3,wrestling in arena,7,,,,,,,1/7c,1/3c,,,,"2/7a,2/7b",,2/3b,,1/2c,1/7c,,,,1/2c,2/7c,,,1/2c,anno3
+dall-e3_physician examining patient_08,dall-e3,physician examining patient,8,,,,,,,,,,,,,,1/2a,,,,,,,,,,,,anno3
+dall-e3_wrestling in arena_02,dall-e3,wrestling in arena,2,,,,,,,1/9c,,,,,,,3/4a,,,1/9a,,,,,"1/9a,3/9b",,,,anno3
+dall-e3_physician examining patient_04,dall-e3,physician examining patient,4,,,1/2c,1/3c,,,,,1/2a,,,2/7c,,2/2a,,,1/7c,,,,,2/7a,,,,anno3
+dall-e3_person jogging_07,dall-e3,person jogging,7,,,,,,,,,,,1/1b,1/2a,,1/2b,,1/1a,1/2a,1/1a,,,,,,,,anno3
+dall-e3_wrestling in arena_08,dall-e3,wrestling in arena,8,,,,"1/3,2/3b","1/2a,1/2b",,1/9c,1/5c,,,"2/2a,1/2b",,,1/1a,,,1/9c,,,,,"2/9a,1/9c",,,,anno3
+dall-e3_person jogging_02,dall-e3,person jogging,2,,,,,,,,,1/2a,,"1/1a,1/1b",,,1/2a,,,,,,,,,,1/2a,,anno3
+dall-e3_mother or father holding baby_08,dall-e3,mother or father holding baby,8,,,,,,,,,,,,,,,2/2a,,,,,,1/2b,,,,1/2b,anno3
+dall-e3_five people playing volleyball_06,dall-e3,five people playing volleyball,6,,,,,1/6b,,,,1/11a,,1/6a,"4/24a,2/24b,1/24c",1/4a,"1/11a,6/11b,3/11c","2/6a,2/6b,2/6c",,"1/24a,1/24b",1/4a,,,,6/24b,,,,anno3
+dall-e3_wrestling in arena_01,dall-e3,wrestling in arena,1,,1/8c,,,1/1a,,,,1/3c,,,"2/7a,1/7b",1/2b,,1/1b,,1/7c,,,,,"1/7b,1/7c",,1/2a,,anno3
+dall-e3_five people sunbathing on beach_08,dall-e3,five people sunbathing on beach,8,1/7a,"2/27b,1/28c",2/9c,1/12c,"1/3b,1/4c",,,,1/11a,,4/7a,1/27b,7/7b,7/11b,1/3a,,4/27a,2/7a,,,,4/27a,,1/11a,,anno3
+dall-e3_five people sunbathing on beach_04,dall-e3,five people sunbathing on beach,4,,,2/10c,1/8b,,,,3/10a,,,,"1/17b,1/17a",,"6/8c,1/8b",4/5c,,"2/17b,1/17a,1/17c",1/7a,,,,,1/7b,,,anno2
+dall-e3_wrestling in arena_06,dall-e3,wrestling in arena,6,,,,1/3a,,,,,,,,,,1/3a,,1/2c,,,,,,4/8a,,,,anno2
+dall-e3_old couple in sauna_02,dall-e3,old couple in sauna,2,,,,,,,,,,,,,,,2/2a,,,,,,,,,1/4a,,anno2
+dall-e3_athlete performing salto_06,dall-e3,athlete performing salto,6,,,1/2b,,,,,,,,,,,,,,,,,,,,,1/2a,,anno2
+dall-e3_couple hugging_08,dall-e3,couple hugging,8,,,1/4b,,,,,,,,,,,1/4b,,,,,,,,,1/4a,,,anno2
+dall-e3_physician examining patient_03,dall-e3,physician examining patient,3,,1/6b,,1/4a,,,,,,,,,,2/4a,1/2b,,,,,,,,,,,anno2
+dall-e3_athlete performing salto_02,dall-e3,athlete performing salto,2,,,,,,,,,1/2c,,,,,,,,,,,,,3/4a,,,,anno2
+dall-e3_mother or father holding baby_05,dall-e3,mother or father holding baby,5,,,,,,,,,,,,,,2/3a,,,,,,,,,,,,anno2
+dall-e3_five people playing volleyball_07,dall-e3,five people playing volleyball,7,,,,,,,,,,,,2/20a,1/10b,"2/6a,1/6b",1/5a,,,,,,1/5a,1/20a,,,,anno2
+dall-e3_people eating pizza_07,dall-e3,people eating pizza,7,,,,,,,,,,,,,,"2/9a,1/9b",,,,,,,,,,,,anno2
+dall-e3_athlete performing salto_03,dall-e3,athlete performing salto,3,,,,,,,,,,,,,,,,,,,,,1/1a,2/2a,,,,anno2
+dall-e3_five people playing volleyball_03,dall-e3,five people playing volleyball,3,,1/24c,,1/11c,,,,,,,1/6c,1/23a,,"5/10a,1/10b,1/10c","2/6a,1/6b,1/6c",,,,,,,3/23a,1/12b,,,anno2
+dall-e3_athlete performing salto_07,dall-e3,athlete performing salto,7,,,,,,,,,,,,,,1/2a,,,,,,,,2/4a,,,,anno2
+dall-e3_person jogging_03,dall-e3,person jogging,3,,,,,,,,,,,,,,,,,,,,,,1/4a,,,,anno2
+dall-e3_old couple in sauna_07,dall-e3,old couple in sauna,7,,,1/4a,1/4a,2/2a,,,,,,,,,"2/4b,1/4a",,,,,,,,,,,,anno2
+dall-e3_people eating pizza_05,dall-e3,people eating pizza,5,,,,"1/4a,1/4c",,,,,,,,1/4b,,1/3b,,,,,,,,,,,,anno1
+dall-e3_old couple in sauna_08,dall-e3,old couple in sauna,8,,,,,,,,,1/4a,,,,4/4a,"1/4a,1/4c",,,,,,,,1/8a,,,,anno1
+dall-e3_physician examining patient_06,dall-e3,physician examining patient,6,,,,,,,,,,,,,,,,,,,,,,,,1/2a,,anno1
+dall-e3_five people playing volleyball_05,dall-e3,five people playing volleyball,5,1/4c,,,1/6b,,,,,,,,,,,3/3a,,2/16a,,,,,2/16a,,,3/3a,anno1
+dall-e3_mother or father holding baby_04,dall-e3,mother or father holding baby,4,,,,,,,,,1/1c,,,,,,,,,,1/1b,,,,,,1/2a,anno1
+dall-e3_person jogging_06,dall-e3,person jogging,6,,,,,,,,,,,,,,,,,,,,,1/1a,,,1/2a,,anno1
+dall-e3_five people sunbathing on beach_03,dall-e3,five people sunbathing on beach,3,,,,,5/5c,,,,,,,"2/20b,2/20c","4/10b,6/10c",10/10b,5/5c,2/5c,5/20a,,,,,6/20a,,,,anno1
+dall-e3_person jogging_08,dall-e3,person jogging,8,,,,,,,,,,,,,,,,,1/4a,,1/2a,,,,,,,anno1
+dall-e3_people eating pizza_03,dall-e3,people eating pizza,3,,,,,,,,,,,,,,1/5a,,,1/2a,,4/5a,,,,,2/5a,,anno1
+dall-e3_five people sunbathing on beach_06,dall-e3,five people sunbathing on beach,6,,,,,4/5b,,,,,,,"9/20a,2/20c",6/7b,,"1/5c,4/5a",,1/20a,1/7a,,,,13/20a,,,5/5a,anno1
+dall-e3_old couple in sauna_05,dall-e3,old couple in sauna,5,,,2/4a,,,,,,,,,,,4/4b,,,,,3/4b,,,,,4/4b,,anno1
+dall-e3_five people sunbathing on beach_07,dall-e3,five people sunbathing on beach,7,,,,2/4a,5/5c,,,1/10a,1/4a,,,1/20a,9/10b,3/4a,"1/5b,5/5c",,6/20b,"2/10a,1/10b",,,,5/20a,4/10b,,,anno1
+dall-e3_physician examining patient_05,dall-e3,physician examining patient,5,,,,,,,,,,,,,,,,,,,,,,1/3a,,,1/2a,anno1
+dall-e3_people eating pizza_04,dall-e3,people eating pizza,4,,,,,,,,,,,,,,2/5a,3/3a,,,,,,,,,,,anno1
+dall-e3_five people playing volleyball_04,dall-e3,five people playing volleyball,4,,,,,,,,,,,,3/24b,,4/12b,,,,,,,,6/24a,,"4/12a,2/12b",,anno1
+sdxl_physician examining patient_02,sdxl,physician examining patient,2,,,,,,,,,1/3c,,,,,4/4b,2/2a,,1/2b,,,,,,,,,anno1
+sdxl_mother or father holding baby_05,sdxl,mother or father holding baby,5,,,,,,,,,,,,,,2/4c,,1/2b,2/4c,,1/4b,,,1/4b,,,,anno1
+sdxl_people eating pizza_03,sdxl,people eating pizza,3,,,,,1/5b,,,,3/8c,,3/5a,,,10/11c,,,,,,,,3/5b,,,2/5a,anno1
+sdxl_person jogging_06,sdxl,person jogging,6,,,,,,,,,,,,,1/2a,2/2a,,,,,,,,3/4a,,2/2a,1/1a,anno1
+sdxl_couple hugging_08,sdxl,couple hugging,8,,,,,,,1/2c,,2/2c,,1/2a,2/3b,,4/4c,1/2c,,1/3c,,,,,,,,1/2a,anno1
+sdxl_athlete performing salto_07,sdxl,athlete performing salto,7,,,,,,,,,,,1/1c,4/4b,1/2b,2/2c,1/1c,1/1c,2/4c,2/2b,,,1/1c,2/4c,,,,anno1
+sdxl_five people playing volleyball_02,sdxl,five people playing volleyball,2,,,2/10c,,2/4c,1/5c,3/17c,,,,"1/5c,2/5a",6/20c,,8/8c,"1/4a,2/4b,1/4c",,,,,,,10/20b,,,,anno1
+sdxl_couple hugging_01,sdxl,couple hugging,1,,,,,,,,,,,,,,1/1b,,,,,,,1/2a,,,,1/2a,anno1
+sdxl_people eating pizza_05,sdxl,people eating pizza,5,,,,1/3c,,,,,,,4/4a,1/2c,,3/3c,1/5c,,1/2c,,,,1/4b,,,,,anno1
+sdxl_old couple in sauna_02,sdxl,old couple in sauna,2,,,,1/4c,,,,,,,2/2c,5/8b,,3/3c,,2/2b,3/8c,,,,,7/8b,,,2/2a,anno1
+sdxl_physician examining patient_06,sdxl,physician examining patient,6,,,,1/3a,,,,,1/3b,,,,,2/3b,"2/3a,1/3b",,,,,,1/3a,,,,,anno4
+sdxl_athlete performing salto_08,sdxl,athlete performing salto,8,,,,,,,1/2c,,,,,,,2/2b,,,1/2b,,,,1/1a,1/2c,,,,anno4
+sdxl_couple hugging_01,sdxl,couple hugging,1,,,,,,,,,,,,,,1/1a,,,,,,,,,,,,anno4
+sdxl_five people sunbathing on beach_06,sdxl,five people sunbathing on beach,6,,5/24b,,,,,,1/12a,,,1/6b,4/24b,6/24b,5/24b,"5/6a,1/6b",,1/24c,,,,,3/24b,,,,anno4
+sdxl_couple hugging_08,sdxl,couple hugging,8,,,,,,,2/3b,,,,,,,2/3b,1/2b,,,,,,,,,,,anno4
+sdxl_athlete performing salto_07,sdxl,athlete performing salto,7,,,1/2b,,,,,,,,,,,2/2a,,,1/2b,,1/2b,1/1c,1/1a,,,,,anno4
+sdxl_people eating pizza_05,sdxl,people eating pizza,5,,,,,,,,,,1/5b,,,,3/4b,,,,,,,,,,,,anno4
+sdxl_five people playing volleyball_08,sdxl,five people playing volleyball,8,,1/24b,,1/12c,,,2/24b,,,,,1/12b,,7/12b,,,1/12b,,,,,,,,,anno4
+sdxl_old couple in sauna_07,sdxl,old couple in sauna,7,,,,,,,,,,,2/2a,1/4a,,"1/3a,1/3b",,,,,,,,,,,,anno4
+sdxl_five people sunbathing on beach_07,sdxl,five people sunbathing on beach,7,,1/10a,2/10b,1/10a,,,,,,,,1/10a,5/5a,1/10a,,,,,,,,2/10a,,,,anno4
+sdxl_person jogging_01,sdxl,person jogging,1,,,,,,,,,1/2a,,1/1b,,1/1a,2/2a,1/1a,,1/2c,,,,,,,,,anno3
+sdxl_wrestling in arena_04,sdxl,wrestling in arena,4,,,,1/4c,,,1/8c,1/4c,,,1/2c,5/9c,,,2/2a,1/2c,4/9c,,,,,"2/9b,1/9c",,,,anno3
+sdxl_physician examining patient_06,sdxl,physician examining patient,6,1/3a,1/5a,,2/4a,1/3a,,,,1/5c,,2/3b,,,"2/5a,1/5b,2/5c","2/3a,1/3b",,,,,,,,,,,anno3
+sdxl_five people playing volleyball_02,sdxl,five people playing volleyball,2,,,1/5c,4/7b,1/4b,1/6c,3/21c,2/5c,,,1/6a,"1/21a,1/21c",,7/7c,"1/4a,1/4b,1/4c",,,,,,,1/21b,,,,anno3
+sdxl_wrestling in arena_03,sdxl,wrestling in arena,3,,,,,,,,,,,1/2b,2/3b,,2/2b,,,,,,,,"4/6a,1/6c",,,,anno3
+sdxl_mother or father holding baby_04,sdxl,mother or father holding baby,4,,,,"1/2a,1/2b",,,,,,,2/2b,,,1/2b,1/2a,,,,,,,,,,,anno3
+sdxl_old couple in sauna_02,sdxl,old couple in sauna,2,,,,"2/3a,1/4c",,,,,,,"1/2a,1/2c",,,3/3c,2/2a,,4/8c,,,,,2/8c,,3/3c,,anno3
+sdxl_athlete performing salto_08,sdxl,athlete performing salto,8,1/1b,,,1/3a,,,1/5c,,1/3c,,1/1c,2/5b,,"1/3b,1/3c",,,,1/2c,,,,1/5c,,,,anno3
+sdxl_five people sunbathing on beach_07,sdxl,five people sunbathing on beach,7,2/5a,"2/19b,1/20c","1/6a,1/6b,4/10c",1/4b,"1/5a,1/5b",,,,,,3/5b,"1/19b,2/19c",6/6c,"3/4a,1/4c",5/5c,,"2/9b,3/9c",3/6b,,,1/5c,6/19b,,,,anno3
+sdxl_people eating pizza_03,sdxl,people eating pizza,3,,,,2/10a,4/5b,,1/5c,,1/10c,,,1/5b,,"1/10b,7/10c",,,,,,,,1/5b,,,,anno3
+sdxl_five people sunbathing on beach_06,sdxl,five people sunbathing on beach,6,,4/24c,,4/12c,,,,,,,1/6a,"1/20a,1/20c","4/10c,3/10b,1/10a","5/8c,2/8b,1/8a","2/6c,3/6b",,,,,,,1/20c,1/10c,,,anno2
+sdxl_mother or father holding baby_04,sdxl,mother or father holding baby,4,,,,,,,,,"1/2b,1/2c",,,,,,,,,,,,,,,,,anno2
+sdxl_person jogging_06,sdxl,person jogging,6,,,,,,,1/2c,,1/2b,,,,,1/2c,,,,,,,,,,,,anno2
+sdxl_physician examining patient_02,sdxl,physician examining patient,2,,,,,,,,,1/3c,,,,,2/3c,1/2a,,,,,,,,,,,anno2
+sdxl_wrestling in arena_03,sdxl,wrestling in arena,3,,,,,,,,,,,,1/6a,,"2/3c,1/3b",,,,,,,2/2a,1/6a,,,,anno2
+sdxl_old couple in sauna_07,sdxl,old couple in sauna,7,,,,,,,,,,,,,,2/3c,2/2a,,1/7b,,,,,,,,,anno2
+sdxl_wrestling in arena_04,sdxl,wrestling in arena,4,,,,,,,1/6c,,,,1/2c,4/6c,,1/2c,,,,,,,,"2/9c,1/9b",,,,anno2
+sdxl_five people playing volleyball_08,sdxl,five people playing volleyball,8,,1/24c,,,,,2/24c,,2/12c,,,1/11c,,"4/11c,1/11a",3/5c,,,,1/11c,,,"2/23a,1/23c",,,,anno2
+sdxl_person jogging_01,sdxl,person jogging,1,,,,,,,,,1/2b,,,,,,,,,,,,,1/4a,,,,anno2
+sdxl_mother or father holding baby_05,sdxl,mother or father holding baby,5,,,,,,,,,"1/3c,1/3b",,,1/4a,,,,,,,1/3b,,,,,,,anno2
+sdxl_person jogging_04,sdxl,person jogging,4,,,,1/2c,,,,,,,,,,,,,,,,,,3/4a,,1/2c,,anno4
+sdxl_athlete performing salto_01,sdxl,athlete performing salto,1,,,,1/2b,,,,,,,,,,,,1/1a,4/4b,,2/2b,,1/1b,2/2b,,,1/1a,anno4
+sdxl_five people playing volleyball_07,sdxl,five people playing volleyball,7,2/6c,,1/12b,,,,,,,,2/6b,1/7b,,,,,,,,,,,,,,anno4
+sdxl_old couple in sauna_01,sdxl,old couple in sauna,1,,,4/4a,,,,1/4c,,,,,,,"3/4c,1/4b",1/2b,,,,,,,,,,,anno4
+sdxl_couple hugging_02,sdxl,couple hugging,2,,,,1/2a,,,,,,,,,,,,,,,,,,,,,,anno4
+sdxl_physician examining patient_08,sdxl,physician examining patient,8,,,,,1/3c,,,,,,,,,3/3c,2/2a,,,,,,,,,,,anno4
+sdxl_person jogging_08,sdxl,person jogging,8,,,,,,,,,,,,,,1/2a,,,,,,,,,,,,anno4
+sdxl_people eating pizza_06,sdxl,people eating pizza,6,,,,,,,1/8a,,,,,2/8b,,3/9b,3/4a,,,,,,,,,,,anno4
+sdxl_couple hugging_06,sdxl,couple hugging,6,,,,,,1/2c,,,,1/2c,,,,,,,,,,,,,,,,anno4
+sdxl_physician examining patient_03,sdxl,physician examining patient,3,,"1/4a, 1/4b",,,,,,,,,,,,3/3b,3/3b,,,,,,,,,,,anno4
+sdxl_mother or father holding baby_07,sdxl,mother or father holding baby,7,,,,1/2b,,,,,,,,,,1/2a,2/2a,,,,,,,,,,,anno4
+sdxl_athlete performing salto_02,sdxl,athlete performing salto,2,,,1/2b,2/2b,,,,,,,,,,,,,,,,,,3/4b,,1/2a,1/1a,anno4
+sdxl_athlete performing salto_03,sdxl,athlete performing salto,3,,,,1/2b,,,,,,,,,1/2a,1/2a,,1/4a,,,,,,,,,,anno4
+sdxl_five people playing volleyball_05,sdxl,five people playing volleyball,5,,1/4b,,,,,1/6b,,,,,,,2/2b,,,,,1/2a,,,,,,,anno4
+sdxl_five people playing volleyball_04,sdxl,five people playing volleyball,4,,2/10b,,2/7c,,,,,,,,,,2/7b,,,2/7a,,,,,,2/10b,,,anno4
+sdxl_people eating pizza_02,sdxl,people eating pizza,2,,,,2/3a,1/3b,,,,,,1/2c,1/5a,,"1/3a,1/3c",1/3b,,,,,,,,,,,anno3
+sdxl_five people sunbathing on beach_02,sdxl,five people sunbathing on beach,2,"2/4a,1/4b","3/12b,4/16c","4/9b,5/9c","3/3a,3/6c",,,1/12c,1/4c,,,2/4c,"1/12a,5/12b,4/12c",4/4b,"1/3b,2/3c",2/2c,1/4b,2/12c,,2/3c,,2/4c,3/12b,3/4b,,,anno3
+sdxl_physician examining patient_05,sdxl,physician examining patient,5,1/3a,,,"2/5a,1/5b,1/6c",2/3a,,,,,,,1/4c,,"2/5a,1/5b",1/3b,,,,,,,1/5c,,,,anno3
+sdxl_people eating pizza_08,sdxl,people eating pizza,8,,1/9c,,4/6a,1/4a,,,,,,1/4c,2/9a,,"3/6a,2/6b",1/4a,,,,1/6b,,1/4b,,,1/6b,,anno3
+sdxl_athlete performing salto_04,sdxl,athlete performing salto,4,,,1/3c,1/3b,,,1/5c,,1/3c,,,,1/2a,"1/3b,1/3c",,,1/5b,,,,,,,,1/1a,anno3
+sdxl_person jogging_07,sdxl,person jogging,7,,,,1/2a,,,,,,,,"1/4a,2/4b",,2/2a,1/1a,,1/4b,,,,1/1b,3/4b,,,,anno3
+sdxl_old couple in sauna_08,sdxl,old couple in sauna,8,,1/8b,,1/3c,1/2a,,,,,,2/2a,,,2/2b,,,,,,,,"1/8a,1/8b",,2/2b,,anno3
+sdxl_mother or father holding baby_03,sdxl,mother or father holding baby,3,,,,1/2a,,,,,,,1/2c,2/2c,,1/2b,"1/2a,1/2b",,,,,,,1/2b,,,1/2a,anno3
+sdxl_old couple in sauna_06,sdxl,old couple in sauna,6,,,,1/3a,,,,,,,,,,1/3b,,,,,1/3c,,1/2a,1/8a,,1/3b,,anno3
+sdxl_wrestling in arena_08,sdxl,wrestling in arena,8,,,"1/5b,1/5c",,,,,1/4c,1/3c,,1/2c,"2/7a,1/7b,1/7c",2/4c,1/3c,2/2c,1/2c,,,,,1/2a,3/7c,,"1/3b,1/3c",,anno3
+sdxl_couple hugging_05,sdxl,couple hugging,5,,,,1/4a,2/2a,,1/3c,,,,,,,"1/4b,2/4c",2/2c,,,,2/4b,,,,,1/4a,,anno3
+sdxl_couple hugging_04,sdxl,couple hugging,4,,,,1/3a,,,,,1/3c,,1/2c,1/2b,,"1/3a,1/3c",1/2a,1/2b,,,,,,1/2a,,,,anno3
+sdxl_five people sunbathing on beach_01,sdxl,five people sunbathing on beach,1,2/6a,2/23c,"4/10a,2/12c",5/6a,"3/6a,1/6b",1/6c,,1/8c,,,2/6c,4/21b,4/8a,6/6c,6/6c,,,"4/9a,1/9b",,,1/6b,"7/21b,1/21c",,,,anno3
+sdxl_old couple in sauna_03,sdxl,old couple in sauna,3,,"1/11b,2/11c",3/4c,"1/4a,1/4b",2/3a,,,,,,2/3a,,,1/4a,1/3a,,,,,,,1/9b,,2/4a,,anno3
+sdxl_old couple in sauna_04,sdxl,old couple in sauna,4,,2/8a,2/5c,,,,1/8c,1/3c,1/2c,,1/2a,"1/8a,2/8b",3/3b,"1/2b,1/2c",1/2a,,2/8b,,,,,2/8a,,,,anno3
+sdxl_physician examining patient_01,sdxl,physician examining patient,1,,,,,,,,,,,,,,3/4c,1/2a,,,,,,,,,,,anno2
+sdxl_five people playing volleyball_06,sdxl,five people playing volleyball,6,,,,,,,1/20c,,"1/9b,2/9a",,2/6c,"3/20c,2/20a",,"4/9c,1/9a","2/5c,1/5b",,,,,,,"2/20b,1/20a",,1/9a,,anno2
+sdxl_mother or father holding baby_08,sdxl,mother or father holding baby,8,,,,"1/3b,1/3a",,,1/3c,,1/3a,,,,,2/3c,2/2c,,,,,,,,,1/3a,,anno2
+sdxl_couple hugging_07,sdxl,couple hugging,7,,1/2c,,,,,2/2c,,1/3c,,1/2c,,,1/2c,2/2c,,,,1/2c,,,,,,,anno2
+sdxl_physician examining patient_07,sdxl,physician examining patient,7,,,,,,,,,1/2a,,,,,1/2a,,,,,,,,,,,,anno2
+sdxl_wrestling in arena_02,sdxl,wrestling in arena,2,,,,1/3c,2/2a,,,,,,1/2c,2/4c,1/4b,2/2c,,,1/8c,"1/4c,1/4a",,,,,,,,anno2
+sdxl_people eating pizza_07,sdxl,people eating pizza,7,,1/9b,,,,,,,3/8a,,,,,"2/8c,1/8b",,,,,,,,,,,,anno2
+sdxl_five people sunbathing on beach_03,sdxl,five people sunbathing on beach,3,2/7c,,1/10c,2/13c,,,1/28c,,,,,"1/28a,3/28c","1/9c,4/9b,2/9a","6/10c,4/10a","2/5a,2/5c",1/7c,1/28c,,,,,"1/28b,3/28c,","2/9c,2/9b",,,anno2
+sdxl_five people sunbathing on beach_05,sdxl,five people sunbathing on beach,5,1/5c,3/20c,,,1/4a,,3/20c,,,,3/5a,3/17c,4/4c,"4/6c,1/6b,1/6a",3/4c,,2/17c,3/4c,,,,1/17c,,,,anno2
+sdxl_five people sunbathing on beach_04,sdxl,five people sunbathing on beach,4,2/5c,3/20c,2/10c,,1/4c,,1/20c,1/10c,,,"2/5c,1/5b",4/14c,"1/5c,2/5b",6/7c,4/4c,,5/14c,1c/5c,,,,1/14c,,1/7a,,anno2
+sdxl_old couple in sauna_05,sdxl,old couple in sauna,5,,,,,,,,,,,1/2a,,,2/3c,,,"1/8c,1/8a",,,,,,,1/3c,1/2a,anno2
+sdxl_wrestling in arena_05,sdxl,wrestling in arena,5,,,1/4c,,,,1/4b,,,,2/2a,"2/8a,1/8c",1/4c,"1/2a,1/2b",,,,,,,,2/8a,,,,anno2
+sdxl_physician examining patient_04,sdxl,physician examining patient,4,,,,"1/3c,1/3a",,,,,1/3a,,,,,,,,,,,,,,,,,anno2
+sdxl_mother or father holding baby_01,sdxl,mother or father holding baby,1,,,,,,,,,,1/2a,,,,1/2a,1/2a,,1/3a,,,,,,,,1/2a,anno2
+sdxl_wrestling in arena_07,sdxl,wrestling in arena,7,,,,1/3c,,,,,,,,1/7a,2/4a,"1/3c,1/3b",,,1/7b,,,,2/2a,2/7a,1/4b,,,anno2
+sdxl_five people playing volleyball_01,sdxl,five people playing volleyball,1,1/5c,"2/19b,1/19c",2/10c,,,,1/19c,,1/6c,,3/5c,9/19c,4/7b,"5/6b,1/6c",1/1c,,3/19b,,,,,7/19b,,,,anno1
+sdxl_people eating pizza_04,sdxl,people eating pizza,4,,,,,,,,,,,1/4a,,,7/7b,2/4b,,2/7b,,,,,2/7b,,,2/4b,anno1
+sdxl_person jogging_03,sdxl,person jogging,3,,,,,,,1/4c,1/4c,,,,2/5c,2/2c,2/2b,,,3/5b,,,,,"2/5a,2/5c",,,,anno1
+sdxl_mother or father holding baby_06,sdxl,mother or father holding baby,6,1/2b,,,,,,,,,,,2/3b,,"1/3a,2/3c",,,1/3c,,,,1/2a,,,,,anno1
+sdxl_five people playing volleyball_03,sdxl,five people playing volleyball,3,,2/21b,,2/10c,4/6c,,,,1/10c,,1/6b,2/21b,3/3b,7/9c,4/5c,,4/21b,,,,,13/21b,,,,anno1
+sdxl_athlete performing salto_06,sdxl,athlete performing salto,6,,,,,,,,,,,1/1a,1/4a,2/2c,2/2b,1/1a,,,,,,,1/4b,,,1/1b,anno1
+sdxl_people eating pizza_01,sdxl,people eating pizza,1,,3/19c,,,2/2c,,3/19c,,,,4/4c,19/19c,,14/14c,2/2c,1/2c,19/19c,,,,,19/19c,,,,anno1
+sdxl_five people sunbathing on beach_08,sdxl,five people sunbathing on beach,8,2/6c,5/24c,6/12c,2/12c,3/5c,,,,,,4/6c,10/19c,"2/8b,6/8c",5/5c,5/5c,,,,,,,5/19c,,,,anno1
+sdxl_person jogging_05,sdxl,person jogging,5,,,,1/2b,,,,,,,,,,2/2c,,,2/4b,1/2b,,,,,3/4b,2/2c,,anno1
+sdxl_wrestling in arena_01,sdxl,wrestling in arena,1,,2/8c,,,1/2a,1/3c,,1/2a,,,,2/8c,1/2c,2/3c,,,1/8b,1/2c,1/3c,,,3/8b,,,,anno1
+sdxl_couple hugging_03,sdxl,couple hugging,3,,,,,,,,,,,1/2b,1/1a,,,1/2a,,,,,,,,,,,anno1
+sdxl_person jogging_02,sdxl,person jogging,2,,1/4b,,,,,,,,,,1/4b,,1/2c,,,1/4b,,,,,3/4a,,1/2c,1/1a,anno1
+sdxl_wrestling in arena_06,sdxl,wrestling in arena,6,,,,,2/2c,,2/5c,,,,,4/7b,2/2b,1/1c,2/2c,,4/7c,1/2c,,,,4/7b,,,,anno1
+sdxl_athlete performing salto_05,sdxl,athlete performing salto,5,,,,,,,,,,,1/1a,,2/2b,1/1a,1/1b,,1/4b,1/2b,,,,2/4b,,,1/1b,anno1
+sdxl_mother or father holding baby_02,sdxl,mother or father holding baby,2,,,,"2/3b,1/3c",,1/2c,,,,,,,,1/2a,,,,,,,1/3a,,,,,anno1
+stablecascade_mother or father holding baby_08,stablecascade,mother or father holding baby,8,,,,,,1/2c,,,,,,1/2b,,2/2b,,,1/2b,,,,,,,,,anno1
+stablecascade_couple hugging_03,stablecascade,couple hugging,3,,,,,,,,,,,,,,2/2a,2/2a,,,,,,,,,,,anno1
+stablecascade_athlete performing salto_02,stablecascade,athlete performing salto,2,,,,,,,,,,,,2/4a,2/2c,"1/2a,1/2b",1/1c,,1/4b,1/2b,,,,4/4a,,1/2b,,anno1
+stablecascade_athlete performing salto_07,stablecascade,athlete performing salto,7,,,,,1/1b,,,,,,1/1b,1/4b,1/2a,"1/2b,1/2c",1/1c,,,,,,1/1b,4/4a,2/2a,,,anno1
+stablecascade_five people sunbathing on beach_04,stablecascade,five people sunbathing on beach,4,1/4c,6/16c,,4/4c,4/4c,,,,,,3/3b,"2/10a,3/10c",5/5b,2/2c,4/4c,,,,,,,"3/10a,7/10c",,,,anno1
+stablecascade_physician examining patient_01,stablecascade,physician examining patient,1,,,,,,,,,,,,,,"1/2a,1/2b",,,1/3a,,,,,1/3b,,,,anno1
+stablecascade_wrestling in arena_04,stablecascade,wrestling in arena,4,,,,,,,,,,,,,,,2/2b,,2/8a,,,,,2/8a,2/4a,,,anno1
+stablecascade_mother or father holding baby_05,stablecascade,mother or father holding baby,5,,,,1/2a,,,,,,,,,,2/2a,,,,,1/2b,,,,,,,anno1
+stablecascade_person jogging_04,stablecascade,person jogging,4,,,,,,,,,1/2b,,,,,2/2c,1/1c,,,,,,,3/4a,,,,anno1
+stablecascade_five people playing volleyball_02,stablecascade,five people playing volleyball,2,,1/15c,7/8c,6/7c,3/3c,,,,,,,11/14c,1/1b,2/2c,3/3c,,3/14b,,,,,"2/14a,10/14c",,,,anno1
+stablecascade_people eating pizza_02,stablecascade,people eating pizza,2,,,,1/3b,,,,,,,,,,1/3b,1/4a,,,,,,,,,,,anno4
+stablecascade_couple hugging_03,stablecascade,couple hugging,3,,,,,,,,,,,,,,,,,,,,1/4a,,,,1/2b,,anno4
+stablecascade_old couple in sauna_01,stablecascade,old couple in sauna,1,,1/4c,,1/4a,,,,,,,,,,,,,,,,,,1/4a,,,1/2a,anno4
+stablecascade_person jogging_08,stablecascade,person jogging,8,,,,2/2b,,,,,,,,,,,1/1a,,,,,,,4/4a,,,,anno4
+stablecascade_athlete performing salto_02,stablecascade,athlete performing salto,2,,,,1/2b,,,,,,,,,,,,,2/2a,2/2b,,,,3/4b,1/2b,,,anno4
+stablecascade_athlete performing salto_07,stablecascade,athlete performing salto,7,,,,2/2b,,,,,,,,1/4b,,,,,,,,,1/1a,1/2b,1/2a,,,anno4
+stablecascade_physician examining patient_06,stablecascade,physician examining patient,6,,,,1/2b,,,,,,,,,,1/2a,,,,,,,,,,,,anno4
+stablecascade_mother or father holding baby_08,stablecascade,mother or father holding baby,8,,,,,,,,,,,,,,,,,,,,,,,,2/2a,,anno4
+stablecascade_five people sunbathing on beach_03,stablecascade,five people sunbathing on beach,3,,8/16c,1/4a,1/1c,,,,,,,4/4b,2/2c,3/4b,,4/4c,,,,,,,,,,,anno4
+stablecascade_five people playing volleyball_06,stablecascade,five people playing volleyball,6,,2/8c,,1/6b,,,,,,,,1/8b,,,1/4a,,2/8b,,,,,3/8b,,1/4b,,anno4
+stablecascade_wrestling in arena_02,stablecascade,wrestling in arena,2,,,,,,,,,,,2/2a,2/6a,,,2/2a,,,,,,,,,,,anno3
+stablecascade_people eating pizza_05,stablecascade,people eating pizza,5,,,,,,,,,,,,1/7c,,2/3b,5/5a,,,,1/3c,,1/5a,,,,,anno3
+stablecascade_old couple in sauna_01,stablecascade,old couple in sauna,1,1/2a,1/8b,,1/4c,2/2a,,,,,,,1/8a,,2/3a,2/2a,,2/8b,,,,,4/8b,,1/3a,,anno3
+stablecascade_people eating pizza_02,stablecascade,people eating pizza,2,,,,2/3a,1/4a,,,,1/3a,,1/4a,,,1/3c,1/4b,,,,,,,,,3/3a,,anno3
+stablecascade_five people playing volleyball_02,stablecascade,five people playing volleyball,2,,"1/15b,1/16c",1/4c,"2/3b,4/7c","1/2a,1/2b",,,,,,,6/15b,"1/2a,1/2c","2/3b,1/3c",2/2c,,,,,,"1/4a,1/4b","2/15a,2/15b",,,,anno3
+stablecascade_couple hugging_04,stablecascade,couple hugging,4,,,,,,,,,,,1/2b,2/2c,,"1/4a,1/4b,2/4c",1/2b,1/2b,,,,,,,,,,anno3
+stablecascade_person jogging_04,stablecascade,person jogging,4,1/1a,,,,,,,,1/2a,,,1/4a,,2/2c,1/1b,,,,,,,2/4b,,,,anno3
+stablecascade_physician examining patient_06,stablecascade,physician examining patient,6,,,,1/2c,,,,,,,,,,1/1c,1/2a,,,,,,,,,,,anno3
+stablecascade_old couple in sauna_08,stablecascade,old couple in sauna,8,,,,"2/4a,1/4b",3/3a,,,,,,1/3a,3/4a,,4/4c,,,,,,,,,,,,anno3
+stablecascade_five people sunbathing on beach_03,stablecascade,five people sunbathing on beach,3,4/4a,"6/16b,4/16c","4/4a,4/8c",7/8c,"2/4a,2/4b",,,,,,"2/4b,2/4c",2/8b,"2/4,2/4b",1/1b,4/4c,,,"2/4a,2/4b",,,2/4a,,,,2/4a,anno3
+stablecascade_mother or father holding baby_05,stablecascade,mother or father holding baby,5,,,,1/2a,,,,,,,,,,1/2c,,,,,,,,,,,,anno2
+stablecascade_old couple in sauna_08,stablecascade,old couple in sauna,8,,,,,,,,,,,,,,"1/4b,1/4a",,,,,,,,,,,,anno2
+stablecascade_person jogging_08,stablecascade,person jogging,8,,,,,,,,,,,,,,2/2a,1/1a,,,,,,,2/4a,,,,anno2
+stablecascade_couple hugging_04,stablecascade,couple hugging,4,,,,,1/2a,,,,,,1/2b,2/2c,,3/3c,,,,,,,,,,,,anno2
+stablecascade_physician examining patient_01,stablecascade,physician examining patient,1,,,,"1/3c,1/3a",,,,,,,,,,"1/3b,1/3a",,,,,,,,,,,,anno2
+stablecascade_wrestling in arena_02,stablecascade,wrestling in arena,2,,,,,,1/2a,,,1/3b,,,,,,"1/2a,1/2c",,,,,,,6/6a,4/4a,,,anno2
+stablecascade_five people playing volleyball_06,stablecascade,five people playing volleyball,6,,1/14a,,,,,,,,,1/4a,"1/14a,2/14c","4/8c,4/8a",3/3c,,,1/14b,,,,,,,,,anno2
+stablecascade_people eating pizza_05,stablecascade,people eating pizza,5,,,,,,,1/6c,,1/3c,,,,,"1/3b,1/3a",1/5a,,,,1/3b,,,,,1/3a,,anno2
+stablecascade_five people sunbathing on beach_04,stablecascade,five people sunbathing on beach,4,,2/16c,,,,,"1/16c,1/16b",,,,"1/4c,3/4b",6/14c,"5/7c,2/7a",5/5c,4/4c,,1/14c,,,,1/14b,,,1/5c,,anno2
+stablecascade_wrestling in arena_04,stablecascade,wrestling in arena,4,,,,1/4c,,,,,,,,,,,2/2a,,1/8a,,,,,1/8a,4/4a,,,anno2
+stablecascade_wrestling in arena_03,stablecascade,wrestling in arena,3,,,,,,,,,,,2/2a,2/4a,,4/4c,2/2a,,1/4a,,,,,1/4a,1/4a,,,anno4
+stablecascade_old couple in sauna_02,stablecascade,old couple in sauna,2,,2/4b,,,,,,,,,,,,,,,,,,,,1/2b,,,,anno4
+stablecascade_athlete performing salto_04,stablecascade,athlete performing salto,4,,,,2/2c,,,,,,,,,,,,,,,,,,1/2a,1/2b,,1/1a,anno4
+stablecascade_wrestling in arena_08,stablecascade,wrestling in arena,8,,1/4c,,,,,,,,,,2/4a,,2/4c,,,,,,,,1/4a,,,,anno4
+stablecascade_old couple in sauna_03,stablecascade,old couple in sauna,3,,,,1/4a,,,,,,,,,,1/4b,,,,,,,,1/4a,,3/4a,,anno4
+stablecascade_five people playing volleyball_04,stablecascade,five people playing volleyball,4,,"6/16c,1/16b",,,,,,,,,,1/3c,4/7b,2/2c,3/4c,,,,,,,,,,,anno4
+stablecascade_people eating pizza_04,stablecascade,people eating pizza,4,,1/8a,,1/6b,,,,,,,,,,4/6b,,,,,,,,,,,,anno4
+stablecascade_person jogging_03,stablecascade,person jogging,3,,,,,,,,,,,,,,,,,,,,,,2/4a,,2/2a,,anno4
+stablecascade_five people sunbathing on beach_01,stablecascade,five people sunbathing on beach,1,,10/20c,,,,,3/10b,,1/10a,,,,,,5/5a,,,,,,,,,2/4a,,anno4
+stablecascade_athlete performing salto_03,stablecascade,athlete performing salto,3,,,,2/2b,,,,,,,,,,,,,,,,,,2/4b,,,1/1a,anno4
+stablecascade_physician examining patient_02,stablecascade,physician examining patient,2,,,,1/2b,,,,,,,,,,,,,,,,,,,,,,anno4
+stablecascade_five people playing volleyball_03,stablecascade,five people playing volleyball,3,,"2/12c,2/12b",,5/12b,,,1/12c,,,,,2/12b,,,6/6b,,,,,,,"1/24a,7/24b",,,,anno4
+stablecascade_old couple in sauna_04,stablecascade,old couple in sauna,4,,,,"1/3c,2/3b",,,,,,,,,,,,,,,,,,2/8b,,2/4b,1/2a,anno4
+stablecascade_couple hugging_05,stablecascade,couple hugging,5,,,,,,,,,,,1/2a,,,,,,,,,,,,,,,anno4
+stablecascade_old couple in sauna_06,stablecascade,old couple in sauna,6,,6/12c,,,,,,,,,,,,4/4b,,,,,,,,,,,,anno4
+stablecascade_person jogging_05,stablecascade,person jogging,5,,,,,,,,,1/2a,,,1/4a,,1/2a,,,,,,,1/1b,,,,,anno3
+stablecascade_mother or father holding baby_06,stablecascade,mother or father holding baby,6,,,,,,,,,,,,,,"1/2a,1/2c",1/2a,,,,,,,,,,,anno3
+stablecascade_person jogging_02,stablecascade,person jogging,2,,,,,,,,,,,,1/4a,1/2a,2/2b,1/1c,1/1a,1/4a,,,,,,,,,anno3
+stablecascade_people eating pizza_08,stablecascade,people eating pizza,8,,,,"1/4a,1/4b,1/5c",1/5a,,,,,,,,,"2/4b,2/4c","3/5a,1/5b,1/5c",,,,,,,1/5a,,,,anno3
+stablecascade_old couple in sauna_05,stablecascade,old couple in sauna,5,2/2a,,,2/4a,1/2a,,,,,,2/2a,1/8a,,"2/4a,1/4b",,,,,,,,,,,,anno3
+stablecascade_wrestling in arena_07,stablecascade,wrestling in arena,7,,2/7a,1/4b,2/4c,,,,,,,"1/2a,1/2b",2/7c,1/4a,1/2b,2/2c,,1/7a,"1/4a,1/4b",,,,,,,,anno3
+stablecascade_physician examining patient_05,stablecascade,physician examining patient,5,,,,,1/2a,,,,,,,1/3a,,,"1/2a,1/2b",,,,,,,,,1/1b,,anno3
+stablecascade_mother or father holding baby_02,stablecascade,mother or father holding baby,2,,,,1/2a,,,,,,,,,,1/2a,1/2a,,,,,,,,,,,anno3
+stablecascade_mother or father holding baby_04,stablecascade,mother or father holding baby,4,,,,,,,1/2c,,,,1/2a,1/2c,,1/2a,,,,,,,,,,,,anno3
+stablecascade_five people sunbathing on beach_08,stablecascade,five people sunbathing on beach,8,3/5b,"2/7b,10/20c",,"2/2a,8/10c",2/2a,,,,,,,2/5c,,,2/2c,1/5c,2/5b,,,,,,,,,anno3
+stablecascade_mother or father holding baby_03,stablecascade,mother or father holding baby,3,,,,,,,,,,,,,,1/1a,1/2a,,,,,,,,,,,anno3
+stablecascade_five people sunbathing on beach_02,stablecascade,five people sunbathing on beach,2,3/3a,,"4/6a,2/6b,1/7c",1/6b,3/3b,,1/13c,,,,3/3b,"5/13b,2/13c",6/6b,6/6c,3/3c,,,,,,1/3a,1/13b,,,,anno3
+stablecascade_physician examining patient_08,stablecascade,physician examining patient,8,,,,1/3a,"1/4a,1/4c",,1/6c,,,1/4c,1/3b,4/6b,,"2/3a,1/3c","2/3b,1/3c",1/3b,,,1/3b,,,1/6b,,,,anno3
+stablecascade_mother or father holding baby_07,stablecascade,mother or father holding baby,7,,,,2/2a,,,,,,,,,,1/2b,,,,,1/2a,1/2a,,,,1/2b,,anno3
+stablecascade_physician examining patient_07,stablecascade,physician examining patient,7,,2/4b,,2/3c,,,,,,,,2/4b,,1/1c,,,,,,,,,,,,anno3
+stablecascade_people eating pizza_06,stablecascade,people eating pizza,6,,,,1/3a,,,,,,,,,,"1/3,2/3c","3/4a,1/4b",,1/4b,,,,,,,1/3a,,anno2
+stablecascade_athlete performing salto_01,stablecascade,athlete performing salto,1,,,,1/2a,,,,,,,,,1/2a,,,,,,,,,1/4a,,2/2a,,anno2
+stablecascade_athlete performing salto_05,stablecascade,athlete performing salto,5,,,,,,,,,,,,1/4b,"1/2a,1/2b",2/2c,1/1a,,1/4a,,,,,,,,,anno2
+stablecascade_people eating pizza_07,stablecascade,people eating pizza,7,,,,,1/3a,,,,1/2a,,,,,"1/2a,1/2b",,,,,,,,,,,,anno2
+stablecascade_wrestling in arena_01,stablecascade,wrestling in arena,1,,1/8c,,1/3c,,,,,,,,1/7a,,,2/2a,,,,,,,,4/4a,1/2b,,anno2
+stablecascade_couple hugging_02,stablecascade,couple hugging,2,,,,,,,,,1/3c,,,,,"1/3b,1/3a",,,,,,,,,,,,anno2
+stablecascade_athlete performing salto_06,stablecascade,athlete performing salto,6,,,,,,,,,,,,,2/2b,2/2c,1/1b,,,,1/2c,,,,,,,anno2
+stablecascade_athlete performing salto_08,stablecascade,athlete performing salto,8,,,,,,,,,,,,,,,1/1a,,,1/2a,1/2a,,,,2/2a,2/2a,,anno2
+stablecascade_couple hugging_06,stablecascade,couple hugging,6,,,,,,,,,,,,,,2/4c,,,,,1/4a,,,,,1/4b,,anno2
+stablecascade_five people playing volleyball_01,stablecascade,five people playing volleyball,1,,,,4/9c,2/5c,,,,,,,4/21c,10/11a,"1/5c,2/5b,1/5a","2/3c,1/3b",1/6c,3/21c,,,,,,,,,anno2
+stablecascade_couple hugging_07,stablecascade,couple hugging,7,,,,1/4c,1/2a,,,,,,,,,"2/4c,1/4b",2/2b,,,,,,,,,,,anno2
+stablecascade_physician examining patient_03,stablecascade,physician examining patient,3,,1/4c,,1/3b,2/3a,,,,,,,,,"1/3c,1/3b",,,,,,,,,,,,anno2
+stablecascade_five people playing volleyball_08,stablecascade,five people playing volleyball,8,,,,3/6c,,,,,,,,"1/12c,1/12b",6/6c,3/3c,3/3c,,1/12b,,,,,1/12b,,,,anno2
+stablecascade_wrestling in arena_06,stablecascade,wrestling in arena,6,,,,,,,,,,,,,1/4a,,2/2a,,,,,,,2/8a,4/4a,,,anno2
+stablecascade_people eating pizza_03,stablecascade,people eating pizza,3,,1/5b,,,2/3a,,,,,,,1/5c,,1/2a,1/3a,,,,,,,,,1/2a,,anno2
+stablecascade_person jogging_07,stablecascade,person jogging,7,,,,,,,,,,,,,,1/2a,1/1a,,,,,,,2/4a,,,,anno1
+stablecascade_physician examining patient_04,stablecascade,physician examining patient,4,,,,2/3c,,,,,,,1/3a,,,"1/3a,2/3c",1/3a,,,,,,,,,,1/3a,anno1
+stablecascade_people eating pizza_01,stablecascade,people eating pizza,1,,,,1/2b,,,,,,,,4/6b,,,,,,,1/2a,,,1/6a,,,,anno1
+stablecascade_wrestling in arena_05,stablecascade,wrestling in arena,5,,2/8c,,,,,,,,,,,1/4b,1/1c,1/2a,,1/6b,,,,,,,,,anno1
+stablecascade_old couple in sauna_07,stablecascade,old couple in sauna,7,1/3a,,,2/2a,,,,,,,,,,,,,1/8a,,,,,,,,1/8a,anno1
+stablecascade_five people sunbathing on beach_05,stablecascade,five people sunbathing on beach,5,,1/16c,6/6c,2/2c,4/4c,,,,,,4/4b,"11/15c,1/15b",5/5b,2/2c,4/4c,,4/15c,4/5c,,,,5/15c,3/5b,,,anno1
+stablecascade_mother or father holding baby_01,stablecascade,mother or father holding baby,1,,,,1/1b,,,,,,,,,,,,,,,,,,,,,,anno1
+stablecascade_five people sunbathing on beach_07,stablecascade,five people sunbathing on beach,7,1/5c,3/20c,,,5/5c,,,,,,5/5c,"12/17c,5/17b",8/8c,3/3c,5/5c,,7/17b,,,,3/5b,15/17b,8/8c,3/3c,5/5c,anno1
+stablecascade_person jogging_01,stablecascade,person jogging,1,,,,,,,,,,,,,1/2a,,1/1a,,1/4a,,1/2a,1/1b,,2/4a,,2/2a,1/1b,anno1
+stablecascade_person jogging_06,stablecascade,person jogging,6,,,,,,,,,1/2b,,,"1/4a,1/4b",1/2a,1/2a,,,1/4a,,,,,2/4a,2/2a,,1/1a,anno1
+stablecascade_five people playing volleyball_05,stablecascade,five people playing volleyball,5,1/4b,3/16c,,,3/4c,,,,,,,7/13c,7/7c,4/4c,3/4c,1/4c,5/13b,,,,4/4a,13/13a,7/7b,,,anno1
+stablecascade_five people playing volleyball_07,stablecascade,five people playing volleyball,7,,4/19c,,,3/3c,,,,,,,8/17c,6/9b,4/4c,4/4c,,2/17a,,,,2/5b,"6/17b,1/17c",2/9c,,,anno1
+stablecascade_couple hugging_01,stablecascade,couple hugging,1,,,,,,,,,,,,,,2/2a,2/2a,,,,2/2b,,,,,2/2b,1/2a,anno1
+stablecascade_five people sunbathing on beach_06,stablecascade,five people sunbathing on beach,6,2/4c,3/9c,,1/2a,4/4c,1/4c,,,,,4/4c,4/6c,2/2c,"1/2b,1/2c",4/4c,,,,,,2/4c,6/6b,,,,anno1
+stablecascade_couple hugging_08,stablecascade,couple hugging,8,,,,1/3b,,,,,,,,,,"2/3a,1/3b",1/2a,,,,2/3a,,2/2a,,,3/3a,,anno1
