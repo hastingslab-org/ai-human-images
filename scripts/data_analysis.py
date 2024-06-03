@@ -24,6 +24,7 @@ import pandas as pd
 from pathlib import Path
 from textwrap import wrap
 from matplotlib.gridspec import GridSpec
+from matplotlib.legend_handler import HandlerTuple
 import re
 
 weights = {'a': 0.2, 'b': 0.5, 'c': 1}
@@ -52,10 +53,12 @@ body_part_mapping = {
 columns_all_krip = ['Pair', 'Type', 'Value']
 
 # Define custom colors for each model
-palette_models = {"dall-e3": "lightblue", "sdxl": "lightsalmon", "stablecascade": "lightcoral"}
+colour_models = ['Blues', 'Greens', 'Reds']
+palette_models = {"dall-e3": plt.get_cmap(colour_models[0])(0.6), "sdxl": plt.get_cmap(colour_models[1])(0.6), "stablecascade": plt.get_cmap(colour_models[2])(0.6)}
 
 annotator_colours = {'anno1': '#F6C06E','anno3':'#ffd670', 'anno4':'#8F5A00','anno2':'#d76b48'}
 colours_krip = {'anno1-anno2': '#e7965b', 'anno1-anno4': '#c38d37', 'anno3-anno4': '#c79838', 'anno2-anno3': '#eba15c', 'anno2-anno4': '#b36324', 'anno1-anno3': '#fbcb6f'}
+
 
 error_level_colours = {"a": "darkgreen", "b": "gold", "c": "darkred"}
 error_sev_colours = {"low": "darkgreen", "medium": "gold", "high": "darkred"}
@@ -388,10 +391,10 @@ def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, com
     plot_prompt_error_type(combined_df, ax41)
     plot_prompt_body_type(combined_df, ax51)
     
-    # fig.suptitle("GridSpec")
+    fig.suptitle("Annotation Results")
     format_axes(fig)
     # plt.tight_layout()
-    plt.savefig('grid.png', dpi=300)
+    plt.savefig('../grid.png', dpi=300)
 
 def plot_cum_score_dist(df, ax):
     sns.histplot(df, x="Total Score", fill=True, color='grey', ax=ax)
@@ -441,7 +444,12 @@ def plot_dist_overall_severity(scores_q, ax):
 
     # sns.histplot(data=plot_overall_sev, x='model', hue='overall_sev',multiple='stack', ax=ax)
     hue_order = ['low', 'medium','high']
-    sns.countplot(data=plot_overall_sev, x='model',hue='overall_sev',palette=error_sev_colours, hue_order=hue_order,ax=ax)
+    sns.countplot(data=plot_overall_sev, x='model',hue='overall_sev', hue_order=hue_order,ax=ax)
+
+    for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
+        for bar, group_cmap in zip(bar_container, ['Blues', 'Greens', 'Reds']):
+            bar.set_color(plt.get_cmap(group_cmap)(shade))
+
     # Add total values on top of each bar
     for p in ax.patches:
         height = p.get_height()
@@ -462,6 +470,10 @@ def plot_error_level_dist_models(error_count_df, ax):
     ax.set_xlabel('Model')
     ax.set_ylabel('Count')    
     ax.set_title('Error Distribution for Each Model')
+
+    for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
+        for bar, group_cmap in zip(bar_container, colour_models):
+            bar.set_color(plt.get_cmap(group_cmap)(shade))
 
     # Add total values on top of each bar
     for p in ax.patches:
@@ -494,7 +506,14 @@ def plot_error_level_models_prompt(combined_df, ax):
     for idx, prompt in enumerate(prompts):
         for i, level in enumerate(error_levels):
             ax.text(idx + i * bar_width + bar_width/6, 0, level, ha='right', va='top', fontsize=9, color='black', rotation=0)
-            
+
+    for bar_container in ax.containers:
+        for bar, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
+            # print(bar_container)
+            for bar_more, group_cmap in zip(bar, colour_models):
+                # print(bar)
+                bar_more.set_color(plt.get_cmap(group_cmap)(shade))
+
     ax.set_xticks(x + bar_width * len(error_levels) / 3)
     ax.set_xticklabels(prompts, rotation=45, ha='right')
     ax.tick_params(axis='x', which='major', pad=10)
