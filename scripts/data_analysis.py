@@ -27,6 +27,7 @@ from matplotlib.gridspec import GridSpec
 from matplotlib.legend_handler import HandlerTuple
 from matplotlib.lines import Line2D
 import re
+from scipy.stats import ttest_ind
 
 weights = {'a': 0.2, 'b': 0.5, 'c': 1}
 
@@ -50,6 +51,11 @@ body_part_mapping = {
         'Hands': ['1. Missing Error-1.4 Hands', '2. Extra Error-2.4 Hands', '3. Configuration Error-3.4 Hands', '4. Orientation Error-4.4 Hands', '5. Proportion Error-5.4 Hands'],
         'Face': ['1. Missing Error-1.5 Face', '2. Extra Error-2.5 Face', '3. Configuration Error-3.5 Face', '4. Orientation Error-4.5 Face', '5. Proportion Error-5.5 Face']
 }
+
+# Define the prompts and categories
+individual_prompts = ['person jogging', 'athlete performing salto']
+pair_prompts = ['couple hugging', 'mother or father holding baby', 'physician examining patient', 'old couple in sauna', 'wrestling in arena']
+group_prompts = ['people eating pizza','five people sunbathing on beach','five people playing volleyball']
 
 columns_all_krip = ['Pair', 'Type', 'Value']
 
@@ -98,6 +104,11 @@ def main():
     krippendorff_results = inter_rater_agreement(df)
     dist_overall_sev = get_overall_sev_dist(df)
     error_count_df = get_data_error_level(df2)
+
+    # cat1 = df[df['Model']=='sdxl']
+    # cat2 = df[df['Model']=='stablecascade']
+    # print(ttest_ind(cat1['Total Score'], cat2['Total Score']))
+
     # plot everything
     plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, combined_df)
 
@@ -372,38 +383,67 @@ def inter_rater_stats(df, df2):
 
 def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, combined_df):
 
-    fig = plt.figure(layout="constrained", figsize=(20, 25))
+    fig = plt.figure(layout="constrained", figsize=(10, 10))
 
-    gs = GridSpec(12, 3, figure=fig)
-    ax11 = fig.add_subplot(gs[0:3, 0])
-    ax12 = fig.add_subplot(gs[0:3, 1])
-    ax13 = fig.add_subplot(gs[0:3, -1])
+    gs = GridSpec(2, 2, figure=fig)
+    ax11 = fig.add_subplot(gs[0, 0])
+    ax12 = fig.add_subplot(gs[0, 1])
+    ax13 = fig.add_subplot(gs[1, 0])
     # identical to ax1 = plt.subplot(gs.new_subplotspec((0, 0), colspan=3))
-    ax21 = fig.add_subplot(gs[3:6, 0])
-    ax22 = fig.add_subplot(gs[3:6, 1])
-    ax23 = fig.add_subplot(gs[3:6, -1])
-    ax31 = fig.add_subplot(gs[6:8, 0:-1])
-    ax32 = fig.add_subplot(gs[6:8, -1])
-    ax41 = fig.add_subplot(gs[8:10, 0:-1])
-    ax42 = fig.add_subplot(gs[8:10, -1])
-    ax51 = fig.add_subplot(gs[10:13, 0:3])
+    ax21 = fig.add_subplot(gs[1, 1])
 
     plot_cum_score_dist(df, ax11)
-    plot_annotator_dist(df, ax12)
-    plot_krippendorff(krippendorff_results,ax13)
-    plot_cum_score_dist_model(df, ax21)
-    plot_dist_overall_severity(dist_overall_sev, ax22)
+    plot_annotator_dist(df, ax13)
+    plot_krippendorff(krippendorff_results,ax21)
+    plot_dist_overall_severity(dist_overall_sev, ax12)
+   
+  
+    
+    # fig.suptitle("Cumulative S")
+    format_axes(fig)
+    # plt.tight_layout()
+    plt.savefig('../grid1.png', dpi=300)
+    
+    plt.cla()
+    fig2 = plt.figure(layout="constrained", figsize=(10, 10))
+
+    gs = GridSpec(2, 2, figure=fig2)
+
+    ax22 = fig2.add_subplot(gs[0, 0])
+    ax23 = fig2.add_subplot(gs[0, 1])
+    ax32 = fig2.add_subplot(gs[1, 0])
+    ax42 = fig2.add_subplot(gs[1, 1])
+
+    
+    plot_cum_score_dist_model(df, ax22)
     plot_error_level_dist_models(error_count_df, ax23)
-    plot_error_level_models_prompt(combined_df, ax31)
     plot_error_level_models_type(combined_df,ax32)
     plot_error_level_models_body_part(combined_df, ax42)
+    
+    # fig2.suptitle("Annotation Results")
+    format_axes(fig2)
+    # plt.tight_layout()
+    plt.savefig('../grid2.png', dpi=300)
+
+    plt.cla()
+    fig3 = plt.figure(layout="constrained", figsize=(15, 20))
+
+    gs = GridSpec(4, 3, figure=fig3)
+
+    ax21 = fig3.add_subplot(gs[0, 0:3])
+    ax31 = fig3.add_subplot(gs[1, 0:3])
+    ax41 = fig3.add_subplot(gs[2, 0:3])
+    ax51 = fig3.add_subplot(gs[3, 0:3])
+
+    plot_prompt_cum_dist(df, ax21)
+    plot_error_level_models_prompt(combined_df, ax31)
     plot_prompt_error_type(combined_df, ax41)
     plot_prompt_body_type(combined_df, ax51)
     
-    fig.suptitle("Annotation Results")
-    format_axes(fig)
+    # fig3.suptitle("Annotation Results")
+    format_axes(fig3)
     # plt.tight_layout()
-    plt.savefig('../grid.png', dpi=300)
+    plt.savefig('../grid3.png', dpi=300)
 
 def plot_cum_score_dist(df, ax):
     sns.histplot(df, x="Total Score", fill=True, color='grey', ax=ax)
@@ -424,7 +464,7 @@ def plot_krippendorff(all_krip, ax):
     labels = ['Pair 1','Pair 2','Pair 3','Pair 4','Pair 5','Pair 6']
     sns.lineplot(data=plot_all_krip, x='Type',y='Value',hue='Pair', palette=colours_krip, ax=ax,)
     ax.legend_.remove()
-    ax.legend(handles,labels,loc='lower right',ncols=2)
+    ax.legend(handles,labels,loc='lower center',ncols=2, bbox_to_anchor=(0.6,0.02))
     ax.set_ylabel('Krippendorff\'s Alpha')
     ax.set_xlabel('Evaluation Criteria')
     ax.set_title('Inter-rater agreement')
@@ -649,12 +689,41 @@ def plot_error_level_models_body_part(combined_df, ax):
     ax.set_ylabel('Count')
     ax.set_title('Count of Errors per Error Severity per Model per Body Part')
 
+def plot_prompt_cum_dist(df, ax):
+
+    # Add a category column based on the prompts
+    df['Category'] = df['Prompt'].apply(lambda x: 'Individual' if x in individual_prompts else 'Pair' if x in pair_prompts else 'Group')
+
+    # Melt the DataFrame for visualization of violin plots for prompts
+    prompt_melted_df = df.melt(id_vars=['Prompt', 'Category'], value_vars=['Total Score'], value_name='Scores')
+
+    # Define the colors for the categories
+    category_colors = {'Pair': 'C0', 'Group': 'C1', 'Individual': 'C2'}
+    platte = ['C0', 'C1', 'C2']
+
+    # Plotting violin plots for cumulative scores per prompt using Set2 palette
+    sns.violinplot(x='Prompt', y='Scores', hue='Category', data=prompt_melted_df, palette=platte, inner='point', linewidth=1, cut=0, fill=False, ax=ax)
+
+    # Rotate the x-tick labels to make them more readable without wrapping
+    labels = prompt_melted_df['Prompt'].unique()
+    ax.set_xticks(ticks=range(len(labels)), labels=labels, rotation=45, ha='right')
+
+    # Change the color of legend labels to match the category
+    for i, text in enumerate(ax.get_legend().get_texts()):
+        text.set_color(platte[i])
+
+     # Add a smaller legend to the rightmost side of the plot
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles, labels, title='Error Types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
+    ax.set_title('Distribution of Cumulative Scores Per Prompt')   
+
 def plot_prompt_error_type(combined_df, ax):
 
     # Aggregate the counts per prompt, error level, and error type
     prompt_error_type_summed_df = combined_df.groupby(['Prompt', 'Error Level', 'Error Type']).sum().reset_index()
     pivot_df = prompt_error_type_summed_df.pivot_table(index=['Prompt', 'Error Level'], columns='Error Type', values='Counts').fillna(0)
     prompts = pivot_df.index.get_level_values(0).unique()
+    # prompts = (individual_prompts + pair_prompts + group_prompts)
     error_levels = pivot_df.index.get_level_values(1).unique()
     error_types = pivot_df.columns
 
