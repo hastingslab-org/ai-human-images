@@ -15,6 +15,7 @@ from scipy.stats import kstest
 import scipy
 import matplotlib.pyplot as plt
 from scipy import stats
+from scipy.stats import ttest_ind
 import math
 from scipy.interpolate import splev, splrep
 import datetime as dt
@@ -70,31 +71,37 @@ colours_krip = {'anno1-anno2': '#e7965b', 'anno1-anno4': '#c38d37', 'anno3-anno4
 error_level_colours = {"a": "darkgreen", "b": "gold", "c": "darkred"}
 error_sev_colours = {"low": "darkgreen", "medium": "gold", "high": "darkred"}
 # Define custom colors for each error type
-error_type_palette = sns.color_palette("Set2", 5)
 error_type_colors = {
-    'Missing Error': error_type_palette[0],
-    'Extra Error': error_type_palette[1],
-    'Configuration Error': error_type_palette[2],
-    'Orientation Error': error_type_palette[3],
-    'Proportion Error': error_type_palette[4]  # Adjust this according to your actual error types
+    'Missing Error': 'Blues',
+    'Extra Error': 'Oranges',
+    'Configuration Error': 'Greens',
+    'Orientation Error': 'Greys',
+    'Proportion Error': 'Purples'  # Adjust this according to your actual error types
+}
+error_type_palette = {
+    'Missing Error': plt.get_cmap(error_type_colors['Missing Error'])(0.6),
+    'Extra Error': plt.get_cmap(error_type_colors['Extra Error'])(0.6),
+    'Configuration Error': plt.get_cmap(error_type_colors['Configuration Error'])(0.6),
+    'Orientation Error': plt.get_cmap(error_type_colors['Orientation Error'])(0.6),
+    'Proportion Error': plt.get_cmap(error_type_colors['Proportion Error'])(0.6) 
 }
 
-# Define custom colors for each body part
-body_part_palette = sns.color_palette("Set2", 5)
-# body_part_colors = {
-#     'Torso': 'Wistia',
-#     'Limbs': 'magma',
-#     'Feet': 'BrBG_r',
-#     'Hands': 'cool',
-#     'Face': 'Accent' 
-# }
 
+# Define custom colors for each body part
 body_part_colors = {
-    'Torso': body_part_palette[0],
-    'Limbs': body_part_palette[1],
-    'Feet': body_part_palette[2],
-    'Hands': body_part_palette[3],
-    'Face': body_part_palette[4]  # Adjust this according to your actual body parts
+    'Torso': 'Blues',
+    'Limbs': 'Greens',
+    'Feet': 'Reds',
+    'Hands': 'Purples',
+    'Face': 'Grays' 
+}
+
+body_part_palette = {
+    'Torso': plt.get_cmap(body_part_colors['Torso'])(0.6),
+    'Limbs': plt.get_cmap(body_part_colors['Limbs'])(0.6),
+    'Feet': plt.get_cmap(body_part_colors['Feet'])(0.6),
+    'Hands': plt.get_cmap(body_part_colors['Hands'])(0.6),
+    'Face': plt.get_cmap(body_part_colors['Face'])(0.6),
 }
 
 def main():
@@ -383,73 +390,203 @@ def inter_rater_stats(df, df2):
 
 def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, combined_df):
 
-    fig = plt.figure(layout="constrained", figsize=(10, 10))
+######### Figure 1
+    fig = plt.figure(layout="constrained", figsize=(10, 5))
 
-    gs = GridSpec(2, 2, figure=fig)
-    ax11 = fig.add_subplot(gs[0, 0])
-    ax12 = fig.add_subplot(gs[0, 1])
-    ax13 = fig.add_subplot(gs[1, 0])
-    # identical to ax1 = plt.subplot(gs.new_subplotspec((0, 0), colspan=3))
-    ax21 = fig.add_subplot(gs[1, 1])
+    gs = GridSpec(1, 2, figure=fig)
+    ax11 = fig.add_subplot(gs[0])
+    ax12 = fig.add_subplot(gs[1])
 
     plot_cum_score_dist(df, ax11)
-    plot_annotator_dist(df, ax13)
-    plot_krippendorff(krippendorff_results,ax21)
-    plot_dist_overall_severity(dist_overall_sev, ax12)
-   
-  
-    
-    # fig.suptitle("Cumulative S")
+    plot_dist_overall_severity(dist_overall_sev, ax12) 
+    fig.text(0.01, 0.96, 'A', fontsize=14)
+    fig.text(0.51, 0.96, 'B', fontsize=14)
+
     format_axes(fig)
     # plt.tight_layout()
-    plt.savefig('../grid1.png', dpi=300)
+    plt.savefig('../Figure_1.png', dpi=300)
     
     plt.cla()
+
+    # stats on results
+    print('dall-e3 mean ', df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ', df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'].var(numeric_only=True))
+
+    print('sdxl mean ',df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ',df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score'].var(numeric_only=True))
+
+    print('stablecascade mean ', df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ', df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'].var(numeric_only=True))
+
+
+    print('Welch t-test dall-e3 vs sdxl ', scipy.stats.ttest_ind(df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'], df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score'], equal_var=False))
+    print('Students t-test dall-e3 vs sdxl ', ttest_ind(df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'], df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score']))
+    print('Welch t-test dall-e3 vs stablecascade ', scipy.stats.ttest_ind(df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'], df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'], equal_var=False))
+    print('Students t-test dall-e3 vs stablecascade ', ttest_ind(df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'], df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score']))
+    print('Welch t-test stablecascade vs sdxl ', scipy.stats.ttest_ind(df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'], df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score'], equal_var=False))
+    print('Students t-test stablecascade vs sdxl ', ttest_ind(df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'], df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score']))
+
+
+######### Figure 2
     fig2 = plt.figure(layout="constrained", figsize=(10, 10))
 
     gs = GridSpec(2, 2, figure=fig2)
+    ax11 = fig2.add_subplot(gs[0, 0])
+    ax12 = fig2.add_subplot(gs[0, 1])
+    ax21 = fig2.add_subplot(gs[1, 0])
+    ax22 = fig2.add_subplot(gs[1, 1])
 
-    ax22 = fig2.add_subplot(gs[0, 0])
-    ax23 = fig2.add_subplot(gs[0, 1])
-    ax32 = fig2.add_subplot(gs[1, 0])
-    ax42 = fig2.add_subplot(gs[1, 1])
+    plot_annotator_dist(df, ax11)
+    plot_krippendorff(krippendorff_results,ax12) 
+    plot_cum_score_dist_model(df, ax21)
+    plot_error_level_dist_models(error_count_df, ax22)
 
-    
-    plot_cum_score_dist_model(df, ax22)
-    plot_error_level_dist_models(error_count_df, ax23)
-    plot_error_level_models_type(combined_df,ax32)
-    plot_error_level_models_body_part(combined_df, ax42)
-    
-    # fig2.suptitle("Annotation Results")
+    fig2.text(0.01, 0.98, 'A', fontsize=14)
+    fig2.text(0.51, 0.98, 'B', fontsize=14)
+    fig2.text(0.01, 0.47, 'C', fontsize=14)
+    fig2.text(0.51, 0.47, 'D', fontsize=14)
+
     format_axes(fig2)
     # plt.tight_layout()
-    plt.savefig('../grid2.png', dpi=300)
+    plt.savefig('../Figure_2.png', dpi=300)
 
+
+######### Figure 3
     plt.cla()
-    fig3 = plt.figure(layout="constrained", figsize=(15, 20))
+    fig3 = plt.figure(layout="constrained", figsize=(15, 10))
 
-    gs = GridSpec(4, 3, figure=fig3)
+    gs = GridSpec(2, 3, figure=fig3)
 
     ax21 = fig3.add_subplot(gs[0, 0:3])
     ax31 = fig3.add_subplot(gs[1, 0:3])
-    ax41 = fig3.add_subplot(gs[2, 0:3])
-    ax51 = fig3.add_subplot(gs[3, 0:3])
 
     plot_prompt_cum_dist(df, ax21)
     plot_error_level_models_prompt(combined_df, ax31)
-    plot_prompt_error_type(combined_df, ax41)
-    plot_prompt_body_type(combined_df, ax51)
+
+    print('five people sunbathing on beach, ', df[df['Prompt'].isin(['five people sunbathing on beach'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ', df[df['Prompt'].isin(['five people sunbathing on beach'])].loc[:, 'Total Score'].var(numeric_only=True))
+    print('mother or father holding baby, ', df[df['Prompt'].isin(['mother or father holding baby'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ', df[df['Prompt'].isin(['mother or father holding baby'])].loc[:, 'Total Score'].var(numeric_only=True))
+
+    print('Welch t-test beach vs baby holding ', scipy.stats.ttest_ind(df[df['Prompt'].isin(['five people sunbathing on beach'])].loc[:, 'Total Score'], df[df['Prompt'].isin(['mother or father holding baby'])].loc[:, 'Total Score'], equal_var=False))
     
-    # fig3.suptitle("Annotation Results")
+
+    fig3.text(0.01, 0.99, 'A', fontsize=14)
+    fig3.text(0.01, 0.49, 'B', fontsize=14)
+    
     format_axes(fig3)
     # plt.tight_layout()
-    plt.savefig('../grid3.png', dpi=300)
+    plt.savefig('../Figure_3.png', dpi=300)
+
+######### Figure 4
+    plt.cla()
+
+    fig4 = plt.figure(layout="constrained", figsize=(10, 5))
+
+    gs = GridSpec(1, 2, figure=fig4)
+
+    ax11 = fig4.add_subplot(gs[0])
+    ax12 = fig4.add_subplot(gs[1])
+
+    plot_error_level_models_type(combined_df,ax11)
+    plot_error_level_models_body_part(combined_df, ax12)
+    
+    fig4.text(0.01, 0.96, 'A', fontsize=14)
+    fig4.text(0.51, 0.96, 'B', fontsize=14)
+
+    format_axes(fig4)
+    # plt.tight_layout()
+    plt.savefig('../Figure_4.png', dpi=300)
+
+
+#########  Supl Figure 1
+    plt.cla()
+    sfig1 = plt.figure(layout="constrained", figsize=(15, 10))
+    gs = GridSpec(2, 1, figure=sfig1)
+
+    ax11 = sfig1.add_subplot(gs[0])
+    ax12 = sfig1.add_subplot(gs[1])
+
+    plot_prompt_error_type(combined_df, ax11)
+    plot_prompt_body_type(combined_df, ax12)
+
+    sfig1.text(0.01, 0.99, 'A', fontsize=14)
+    sfig1.text(0.01, 0.49, 'B', fontsize=14)
+
+    format_axes(sfig1)
+    # plt.tight_layout()
+    plt.savefig('../Suppl_Figure_1.png', dpi=300)
+
+#########  Supl Figure 2
+    plt.cla()
+    sfig1 = plt.figure(layout="constrained", figsize=(25, 15))
+    gs = GridSpec(3, 2, figure=sfig1)
+
+    ax11 = sfig1.add_subplot(gs[0,0])
+    ax12 = sfig1.add_subplot(gs[0,1])
+    ax13 = sfig1.add_subplot(gs[1,0])
+    ax14 = sfig1.add_subplot(gs[1,1])
+    ax15 = sfig1.add_subplot(gs[2,0])
+
+
+    plot_error_level_models_prompt(combined_df[combined_df['Error Type'].isin(['Configuration Error'])], ax12)
+    plot_error_level_models_prompt(combined_df[combined_df['Error Type'].isin(['Orientation Error'])], ax13)
+    plot_error_level_models_prompt(combined_df[combined_df['Error Type'].isin(['Proportion Error'])], ax14)
+    plot_error_level_models_prompt(combined_df[combined_df['Error Type'].isin(['Missing Error'])], ax15)
+    plot_error_level_models_prompt(combined_df[combined_df['Error Type'].isin(['Extra Error'])], ax11)
+
+    ax12.set_title('Arregate of errors by severity and model and prompt for configuration error')
+    ax13.set_title('Arregate of errors by severity and model and prompt for orientation error')
+    ax14.set_title('Arregate of errors by severity and model and prompt for proportion error')
+    ax15.set_title('Arregate of errors by severity and model and prompt for missing error')
+    ax11.set_title('Arregate of errors by severity and model and prompt for extra error')
+
+    sfig1.text(0.01, 0.98, 'A', fontsize=14)
+    sfig1.text(0.51, 0.98, 'B', fontsize=14)
+    sfig1.text(0.01, 0.64, 'C', fontsize=14)
+    sfig1.text(0.51, 0.64, 'D', fontsize=14)
+    sfig1.text(0.01, 0.34, 'E', fontsize=14)
+
+    format_axes(sfig1)
+    # plt.tight_layout()
+    plt.savefig('../Suppl_Figure_2.png', dpi=300)
+
+#########  Supl Figure 3
+    plt.cla()
+    sfig1 = plt.figure(layout="constrained", figsize=(25, 15))
+    gs = GridSpec(3, 2, figure=sfig1)
+
+    ax11 = sfig1.add_subplot(gs[0,0])
+    ax12 = sfig1.add_subplot(gs[0,1])
+    ax13 = sfig1.add_subplot(gs[1,0])
+    ax14 = sfig1.add_subplot(gs[1,1])
+    ax15 = sfig1.add_subplot(gs[2,0])
+
+
+    plot_error_level_models_prompt(combined_df[combined_df['Body Part'].isin(['Face'])], ax12)
+    plot_error_level_models_prompt(combined_df[combined_df['Body Part'].isin(['Feet'])], ax13)
+    plot_error_level_models_prompt(combined_df[combined_df['Body Part'].isin(['Hands'])], ax14)
+    plot_error_level_models_prompt(combined_df[combined_df['Body Part'].isin(['Torso'])], ax15)
+    plot_error_level_models_prompt(combined_df[combined_df['Body Part'].isin(['Limbs'])], ax11)
+
+    ax12.set_title('Arregate of errors by severity and model and prompt for face')
+    ax13.set_title('Arregate of errors by severity and model and prompt for feet')
+    ax14.set_title('Arregate of errors by severity and model and prompt for hands')
+    ax15.set_title('Arregate of errors by severity and model and prompt for torso')
+    ax11.set_title('Arregate of errors by severity and model and prompt for limbs')
+
+    sfig1.text(0.01, 0.98, 'A', fontsize=14)
+    sfig1.text(0.51, 0.98, 'B', fontsize=14)
+    sfig1.text(0.01, 0.64, 'C', fontsize=14)
+    sfig1.text(0.51, 0.64, 'D', fontsize=14)
+    sfig1.text(0.01, 0.34, 'E', fontsize=14)
+
+    format_axes(sfig1)
+    # plt.tight_layout()
+    plt.savefig('../Suppl_Figure_3.png', dpi=300)
+
+
 
 def plot_cum_score_dist(df, ax):
     sns.histplot(df, x="Total Score", fill=True, color='grey', ax=ax)
-    ax.set_xlabel('Cumulative Score')
+    ax.set_xlabel('Cumulative score')
     ax.set_ylabel('Count')
-    ax.set_title('Distribution of cumulative scores.')
+    ax.set_title('Distribution of cumulative scores')
 
 
 def plot_krippendorff(all_krip, ax):
@@ -466,7 +603,7 @@ def plot_krippendorff(all_krip, ax):
     ax.legend_.remove()
     ax.legend(handles,labels,loc='lower center',ncols=2, bbox_to_anchor=(0.6,0.02))
     ax.set_ylabel('Krippendorff\'s Alpha')
-    ax.set_xlabel('Evaluation Criteria')
+    ax.set_xlabel('Evaluation criteria')
     ax.set_title('Inter-rater agreement')
 
 
@@ -475,7 +612,7 @@ def plot_cum_score_dist_model(df, ax):
     sns.violinplot(x='Model', y='Total Score', data=df, palette=palette_models, inner='point',  gap=.1, cut = 0, fill=False, ax=ax)
     ax.set_xlabel('Model')
     ax.set_ylabel('Cumulative score')
-    ax.set_title('Distribution of cumulative scores per model.')
+    ax.set_title('Distribution of cumulative scores per model')
 
 
 def plot_annotator_dist(data, ax):
@@ -483,7 +620,7 @@ def plot_annotator_dist(data, ax):
     ax.xaxis.set_ticklabels(['1', '2', '3', '4'])
     ax.set_xlabel('Annotator')
     ax.set_ylabel('Cumulative score')
-    ax.set_title('Distribution of cumulative scores per annotator.')
+    ax.set_title('Distribution of cumulative scores per annotator')
 
 def plot_dist_overall_severity(scores_q, ax):
 
@@ -502,7 +639,7 @@ def plot_dist_overall_severity(scores_q, ax):
     for p in ax.patches:
         height = p.get_height()
         if height > 0:
-            ax.annotate(f'{height:.2f}', (p.get_x() + p.get_width() / 2., height),
+            ax.annotate(f'{int(height)}', (p.get_x() + p.get_width() / 2., height),
                         ha='center', va='center', xytext=(0, 9), textcoords='offset points')
 
     # custom legend
@@ -524,8 +661,8 @@ def plot_error_level_dist_models(error_count_df, ax):
     model_count_melted_df = model_count_summed_df.melt(id_vars=['Model'], value_vars=['a', 'b', 'c'], var_name='Error Level', value_name='Counts')
     sns.barplot(data=model_count_melted_df, x='Model', y='Counts', hue='Error Level', palette=error_level_colours, ci=None, ax=ax)
     ax.set_xlabel('Model')
-    ax.set_ylabel('Count')    
-    ax.set_title('Error Distribution for Each Model')
+    ax.set_ylabel('Aggregate')    
+    ax.set_title('Aggregate of errors by severity and model')
 
     # add shading
     for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
@@ -590,9 +727,9 @@ def plot_error_level_models_prompt(combined_df, ax):
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Models', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
-    ax.set_xlabel('Prompts and Error Severity')
-    ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Severity per Model per Prompt')
+    ax.set_xlabel('Prompts and error severity')
+    ax.set_ylabel('Aggregate')
+    ax.set_title('Aggregate of errors by severity and model and prompt')
 
     # ax.set_xticklabels(ax.get_xticklabels(),rotation=45, ha='right')
         
@@ -632,15 +769,15 @@ def plot_error_level_models_type(combined_df, ax):
         i += 1
             
     ax.set_xticks(x + bar_width * len(error_levels) / 3)
-    ax.set_xticklabels(error_types, rotation=45, ha='right')
+    ax.set_xticklabels(pd.Index(error_types.to_series().replace({'Configuration Error': 'Configuration\n error', 'Extra Error': 'Extra\n error', 'Missing Error': 'Missing\n error', 'Orientation Error': 'Orientation\n error', 'Proportion Error':'Proportion\n error'})), rotation=0, ha='center')
     ax.tick_params(axis='x', which='major', pad=10)
 
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Models', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
-    ax.set_xlabel('Error Type and Error Severity')
-    ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Severity per Model per Error Type')
+    ax.set_xlabel('Error type and error severity')
+    ax.set_ylabel('Aggregate')
+    ax.set_title('Aggregate of errors by severity/model/type')
 
 def plot_error_level_models_body_part(combined_df, ax):
 
@@ -685,9 +822,9 @@ def plot_error_level_models_body_part(combined_df, ax):
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, title='Models', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
-    ax.set_xlabel('Body Part and Error Severity')
-    ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Severity per Model per Body Part')
+    ax.set_xlabel('Body part and error severity')
+    ax.set_ylabel('Aggregate')
+    ax.set_title('Aggregate of errors by severity/model/body part')
 
 def plot_prompt_cum_dist(df, ax):
 
@@ -714,8 +851,9 @@ def plot_prompt_cum_dist(df, ax):
 
      # Add a smaller legend to the rightmost side of the plot
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles, labels, title='Error Types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
-    ax.set_title('Distribution of Cumulative Scores Per Prompt')   
+    ax.legend(handles, labels, title='Error types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
+    ax.set_ylabel('Cumulative score')
+    ax.set_title('Distribution of cumulative scores per prompt')   
 
 def plot_prompt_error_type(combined_df, ax):
 
@@ -736,7 +874,7 @@ def plot_prompt_error_type(combined_df, ax):
         bottom = np.zeros(len(prompts))
         for error_type in error_types:
             values = pivot_df.xs(error_level, level='Error Level')[error_type].values
-            ax.bar(x + i * bar_width, values, bottom=bottom, width=bar_width, color=error_type_colors[error_type], label=error_type if i == 0 else "")
+            ax.bar(x + i * bar_width, values, bottom=bottom, width=bar_width, color=error_type_palette[error_type], label=error_type if i == 0 else "")
             bottom += values
             if error_type == list(error_types)[-1]:  # Only annotate once per bar group
                 for j, val in enumerate(bottom):
@@ -752,25 +890,25 @@ def plot_prompt_error_type(combined_df, ax):
     ax.set_xticklabels(prompts, rotation=45, ha='right')
     ax.tick_params(axis='x', which='major', pad=10)
 
-    # # add shading
-    # all_colours_shades = []
-    # for shade in [0.3,0.6,0.9]:
-    #     for _,colour in error_type_colors.items():
-    #         all_colours_shades.append(plt.get_cmap(colour)(shade))
+    # add shading
+    all_colours_shades = []
+    for shade in [0.3,0.6,0.9]:
+        for _,colour in error_type_colors.items():
+            all_colours_shades.append(plt.get_cmap(colour)(shade))
     
-    # i = 0
-    # for bar_container in ax.containers:
-    #     for bar in bar_container:
-    #         bar.set_color(all_colours_shades[i])
-    #     i += 1
+    i = 0
+    for bar_container in ax.containers:
+        for bar in bar_container:
+            bar.set_color(all_colours_shades[i])
+        i += 1
 
     # Add a smaller legend to the rightmost side of the plot
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles, labels, title='Error Types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
+    ax.legend(handles, labels, title='Error types', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
-    ax.set_xlabel('Prompt and Error Severity')
-    ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Type per Body Type per Prompt')
+    ax.set_xlabel('Prompt and error severity')
+    ax.set_ylabel('Aggregate')
+    ax.set_title('Aggregate of errors by type and body type and prompt')
 
 def plot_prompt_body_type(combined_df, ax):
     # Aggregate the counts per prompt, error level, and body part
@@ -789,7 +927,7 @@ def plot_prompt_body_type(combined_df, ax):
         bottom = np.zeros(len(prompts))
         for body_part in body_parts:
             values = pivot_df.xs(error_level, level='Error Level')[body_part].values
-            ax.bar(x + i * bar_width, values, bottom=bottom, width=bar_width, color=body_part_colors[body_part], label=body_part if i == 0 else "")
+            ax.bar(x + i * bar_width, values, bottom=bottom, width=bar_width, color=body_part_palette[body_part], label=body_part if i == 0 else "")
             bottom += values
             if body_part == list(body_parts)[-1]:  # Only annotate once per bar group
                 for j, val in enumerate(bottom):
@@ -805,25 +943,25 @@ def plot_prompt_body_type(combined_df, ax):
     ax.set_xticklabels(prompts, rotation=45, ha='right')
     ax.tick_params(axis='x', which='major', pad=10)
 
-    # # add shading
-    # all_colours_shades = []
-    # for shade in [0.3,0.6,0.9]:
-    #     for _,colour in body_part_colors.items():
-    #         all_colours_shades.append(plt.get_cmap(colour)(shade))
+    # add shading
+    all_colours_shades = []
+    for shade in [0.3,0.6,0.9]:
+        for _,colour in body_part_colors.items():
+            all_colours_shades.append(plt.get_cmap(colour)(shade))
     
-    # i = 0
-    # for bar_container in ax.containers:
-    #     for bar in bar_container:
-    #         bar.set_color(all_colours_shades[i])
-    #     i += 1
+    i = 0
+    for bar_container in ax.containers:
+        for bar in bar_container:
+            bar.set_color(all_colours_shades[i])
+        i += 1
 
     # Add a smaller legend to the rightmost side of the plot
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles, labels, title='Body Parts', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
+    ax.legend(handles, labels, title='Body parts', fontsize='small', title_fontsize='small', loc='upper right', bbox_to_anchor=(1, 1), borderaxespad=0.)
 
-    ax.set_xlabel('Prompt and Error Severity')
-    ax.set_ylabel('Count')
-    ax.set_title('Count of Errors per Error Severity per Prompt per Body Part')
+    ax.set_xlabel('Prompt and error severity')
+    ax.set_ylabel('Aggregate')
+    ax.set_title('Aggregate of errors by severity and prompt and body part')
 
 def format_axes(fig):
     for i, ax in enumerate(fig.axes):
