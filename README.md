@@ -13,8 +13,8 @@ The folder *images* contains all the AI generated images. For each model there i
 
 ## Classification System
 
-Our classification system is described in the manuscript, a graphical representation can be found below.
-Furthermore, the manual that outlines the classification system and gives guidance on how to apply it is stored as *xxx*.
+Our classification system is described in the manuscript, and a graphical representation can be found below.
+Furthermore, the manual that outlines the classification system and gives guidance on how to apply it is stored as [error_classification_system_manual.pdf](error_classification_system_manual.pdf).
 
 ![Our novel classification system](classification_system.png?raw=true "Our novel classification system")
 
