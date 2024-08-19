@@ -30,6 +30,7 @@ from matplotlib.lines import Line2D
 import re
 from scipy.stats import ttest_ind
 
+
 weights = {'a': 0.2, 'b': 0.5, 'c': 1}
 
 quan_low = 0.5
@@ -630,10 +631,12 @@ def plot_dist_overall_severity(scores_q, ax):
     hue_order = ['low', 'medium','high']
     sns.countplot(data=plot_overall_sev, x='model',hue='overall_sev', hue_order=hue_order,ax=ax)
 
-    # add shading
-    for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
-        for bar, group_cmap in zip(bar_container, ['Blues', 'Greens', 'Reds']):
-            bar.set_color(plt.get_cmap(group_cmap)(shade))
+    patterns = ["-", "o", "\\"]
+    colors = ["lightblue", "seagreen", "tomato"]
+    for bars, pattern in zip(ax.containers, patterns):
+        for bar, color in zip(bars, colors):
+            bar.set_facecolor(color)
+            bar.set_hatch(pattern)
 
     # Add total values on top of each bar
     for p in ax.patches:
@@ -642,39 +645,46 @@ def plot_dist_overall_severity(scores_q, ax):
             ax.annotate(f'{int(height)}', (p.get_x() + p.get_width() / 2., height),
                         ha='center', va='center', xytext=(0, 9), textcoords='offset points')
 
-    # custom legend
-    custom_lines = [Line2D([0], [0], color=plt.get_cmap('Blues')(0.3), lw=4),
-                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.6), lw=4),
-                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.9), lw=4)]
+    handles = [mpatches.Patch(facecolor='white', edgecolor='black', hatch=pattern, label=level)
+               for pattern, level in zip(patterns, hue_order)]
+    ax.legend(handles=handles, title='Severity Levels')
 
-    ax.legend(custom_lines, ['low', 'medium', 'high'])
-            
+
     ax.set_xlabel('Model')
     ax.set_ylabel('Count')
     ax.set_title('Overall distribution of overall image severity')
+    sns.despine()
     
 def plot_error_level_dist_models(error_count_df, ax):
     # Sum cumulative error scores for each model
     model_count_summed_df = error_count_df.groupby('Model').sum().reset_index()
 
     # Side-by-side bar plot for models without weights
-    model_count_melted_df = model_count_summed_df.melt(id_vars=['Model'], value_vars=['a', 'b', 'c'], var_name='Error Level', value_name='Counts')
-    sns.barplot(data=model_count_melted_df, x='Model', y='Counts', hue='Error Level', palette=error_level_colours, ci=None, ax=ax)
+    model_count_melted_df = model_count_summed_df.melt(id_vars=['Model'], value_vars=['a', 'b', 'c'],
+                                                       var_name='Error Level', value_name='Counts')
+
+    patterns = ["-", "o", "\\"]  # Patterns corresponding to a, b, c
+
+    # Create barplot with consistent colors for each model
+    sns.barplot(data=model_count_melted_df, x='Model', y='Counts', hue='Error Level',
+                errorbar=None, ax=ax)
+
     ax.set_xlabel('Model')
-    ax.set_ylabel('Aggregate')    
+    ax.set_ylabel('Aggregate')
     ax.set_title('Aggregate of errors by severity and model')
 
-    # add shading
-    for bar_container, shade in zip(ax.containers, [0.3, 0.6, 0.9]):
-        for bar, group_cmap in zip(bar_container, colour_models):
-            bar.set_color(plt.get_cmap(group_cmap)(shade))
+    # Apply alternating patterns to the bars while keeping the same color for each model
+    palette = ["lightblue", "seagreen", "tomato"]
+    for bars, hatch in zip(ax.containers, patterns):
+        for bar, color in zip(bars, palette * len(patterns)):
+            bar.set_facecolor(color)
+            bar.set_hatch(hatch)
 
-    # custom legend
-    custom_lines = [Line2D([0], [0], color=plt.get_cmap('Blues')(0.3), lw=4),
-                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.6), lw=4),
-                    Line2D([0], [0], color=plt.get_cmap('Blues')(0.9), lw=4)]
+    # Create custom legend for the patterns
+    handles = [mpatches.Patch(facecolor='white', edgecolor='black', hatch=patterns[i], label=f'{el}')
+               for i, el in enumerate(['a', 'b', 'c'])]
 
-    ax.legend(custom_lines, ['a', 'b', 'c'])
+    ax.legend(handles=handles, title='Error Levels')
 
     # Add total values on top of each bar
     for p in ax.patches:
@@ -682,6 +692,7 @@ def plot_error_level_dist_models(error_count_df, ax):
         if height > 0:
             ax.annotate(f'{height:.2f}', (p.get_x() + p.get_width() / 2., height),
                         ha='center', va='center', xytext=(0, 9), textcoords='offset points')
+
 
 def plot_error_level_models_prompt(combined_df, ax):
 
