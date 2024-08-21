@@ -390,23 +390,34 @@ def inter_rater_stats(df, df2):
 
 def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, combined_df):
 
-######### Figure 1
-    fig = plt.figure(layout="constrained", figsize=(10, 5))
+######### Figure 3
+    fig3 = plt.figure(layout="constrained", figsize=(15, 10))
 
-    gs = GridSpec(1, 2, figure=fig)
-    ax11 = fig.add_subplot(gs[0])
-    ax12 = fig.add_subplot(gs[1])
+    gs = GridSpec(2, 3, figure=fig3)
+    ax11 = fig3.add_subplot(gs[0,0])
+    ax12 = fig3.add_subplot(gs[0,1])
+    ax111 = fig3.add_subplot(gs[0, 2])
+    ax121 = fig3.add_subplot(gs[1, 0])
+    ax211 = fig3.add_subplot(gs[1, 1])
+    ax221 = fig3.add_subplot(gs[1, 2])
 
     plot_cum_score_dist(df, ax11)
     plot_dist_overall_severity(dist_overall_sev, ax12) 
-    fig.text(0.01, 0.96, 'A', fontsize=14)
-    fig.text(0.51, 0.96, 'B', fontsize=14)
+    plot_annotator_dist(df, ax111)
+    plot_krippendorff(krippendorff_results,ax121) 
+    plot_cum_score_dist_model(df, ax211)
+    plot_error_level_dist_models(error_count_df, ax221)
 
-    format_axes(fig)
+    fig3.text(0.01, 0.98, 'A', fontsize=14)
+    fig3.text(0.35, 0.98, 'B', fontsize=14)
+    fig3.text(0.68, 0.98, 'C', fontsize=14)
+    fig3.text(0.01, 0.49, 'D', fontsize=14)
+    fig3.text(0.35, 0.49, 'E', fontsize=14)
+    fig3.text(0.68, 0.49, 'F', fontsize=14)
+
+    format_axes(fig3)
     # plt.tight_layout()
-    plt.savefig('../Figure_1.png', dpi=300)
-    
-    plt.cla()
+    plt.savefig('../Figure_3.png', dpi=300)   
 
     # stats on results
     print('dall-e3 mean ', df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'].mean(numeric_only=True), ', variance ', df[df['Model'].isin(['dall-e3'])].loc[:, 'Total Score'].var(numeric_only=True))
@@ -424,38 +435,15 @@ def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, com
     print('Students t-test stablecascade vs sdxl ', ttest_ind(df[df['Model'].isin(['stablecascade'])].loc[:, 'Total Score'], df[df['Model'].isin(['sdxl'])].loc[:, 'Total Score']))
 
 
-######### Figure 2
-    fig2 = plt.figure(layout="constrained", figsize=(10, 10))
 
-    gs = GridSpec(2, 2, figure=fig2)
-    ax11 = fig2.add_subplot(gs[0, 0])
-    ax12 = fig2.add_subplot(gs[0, 1])
-    ax21 = fig2.add_subplot(gs[1, 0])
-    ax22 = fig2.add_subplot(gs[1, 1])
-
-    plot_annotator_dist(df, ax11)
-    plot_krippendorff(krippendorff_results,ax12) 
-    plot_cum_score_dist_model(df, ax21)
-    plot_error_level_dist_models(error_count_df, ax22)
-
-    fig2.text(0.01, 0.98, 'A', fontsize=14)
-    fig2.text(0.51, 0.98, 'B', fontsize=14)
-    fig2.text(0.01, 0.47, 'C', fontsize=14)
-    fig2.text(0.51, 0.47, 'D', fontsize=14)
-
-    format_axes(fig2)
-    # plt.tight_layout()
-    plt.savefig('../Figure_2.png', dpi=300)
-
-
-######### Figure 3
+######### Figure 4
     plt.cla()
-    fig3 = plt.figure(layout="constrained", figsize=(15, 10))
+    fig4 = plt.figure(layout="constrained", figsize=(15, 10))
 
-    gs = GridSpec(2, 3, figure=fig3)
+    gs = GridSpec(2, 3, figure=fig4)
 
-    ax21 = fig3.add_subplot(gs[0, 0:3])
-    ax31 = fig3.add_subplot(gs[1, 0:3])
+    ax21 = fig4.add_subplot(gs[0, 0:3])
+    ax31 = fig4.add_subplot(gs[1, 0:3])
 
     plot_prompt_cum_dist(df, ax21)
     plot_error_level_models_prompt(combined_df, ax31)
@@ -466,32 +454,32 @@ def plot_on_grid(df, krippendorff_results, dist_overall_sev, error_count_df, com
     print('Welch t-test beach vs baby holding ', scipy.stats.ttest_ind(df[df['Prompt'].isin(['five people sunbathing on beach'])].loc[:, 'Total Score'], df[df['Prompt'].isin(['mother or father holding baby'])].loc[:, 'Total Score'], equal_var=False))
     
 
-    fig3.text(0.01, 0.99, 'A', fontsize=14)
-    fig3.text(0.01, 0.49, 'B', fontsize=14)
+    fig4.text(0.01, 0.99, 'A', fontsize=14)
+    fig4.text(0.01, 0.49, 'B', fontsize=14)
     
-    format_axes(fig3)
+    format_axes(fig4)
     # plt.tight_layout()
-    plt.savefig('../Figure_3.png', dpi=300)
+    plt.savefig('../Figure_4.png', dpi=300)
 
-######### Figure 4
+######### Figure 5
     plt.cla()
 
-    fig4 = plt.figure(layout="constrained", figsize=(10, 5))
+    fig5 = plt.figure(layout="constrained", figsize=(10, 5))
 
-    gs = GridSpec(1, 2, figure=fig4)
+    gs = GridSpec(1, 2, figure=fig5)
 
-    ax11 = fig4.add_subplot(gs[0])
-    ax12 = fig4.add_subplot(gs[1])
+    ax11 = fig5.add_subplot(gs[0])
+    ax12 = fig5.add_subplot(gs[1])
 
     plot_error_level_models_type(combined_df,ax11)
     plot_error_level_models_body_part(combined_df, ax12)
     
-    fig4.text(0.01, 0.96, 'A', fontsize=14)
-    fig4.text(0.51, 0.96, 'B', fontsize=14)
+    fig5.text(0.01, 0.96, 'A', fontsize=14)
+    fig5.text(0.51, 0.96, 'B', fontsize=14)
 
-    format_axes(fig4)
+    format_axes(fig5)
     # plt.tight_layout()
-    plt.savefig('../Figure_4.png', dpi=300)
+    plt.savefig('../Figure_5.png', dpi=300)
 
 
 #########  Supl Figure 1
