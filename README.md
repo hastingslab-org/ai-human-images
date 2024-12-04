@@ -3,7 +3,7 @@
 ## Overview
 
 Here, we present our novel classifciation system to assess AI generated images for their anatomical correctness. 
-We also provide the AI generated images, the annotation results and the scripts for their evaluation, as used in our manuscript.
+We also provide the AI generated images, the annotation results and the scripts for their evaluation, as used in our [manuscript](https://www.cureus.com/articles/308456-evaluating-text-to-image-generated-photorealistic-images-of-human-anatomy#!/).
 
 ## AI generated images
 
@@ -24,4 +24,4 @@ The folder *data* contains a csv file with all the annotations of the AI generat
 
 ## How to cite
 
-In review.
+If you find this useful please cite [our paper](https://www.cureus.com/articles/308456-evaluating-text-to-image-generated-photorealistic-images-of-human-anatomy#!/).
